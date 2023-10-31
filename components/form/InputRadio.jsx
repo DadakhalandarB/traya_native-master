@@ -22,7 +22,7 @@ import { QUESTIONS, V4_QUESTIONS } from "@constants/routes";
 import { handleCustomUserAttributes } from "@helpers/handleMoengage";
 import Image from "next/image";
 import { QuestionsContext } from "../../context/questions-store";
-const optionName = require(`../../assets/images/${option.image_url}`);
+// const optionName = require(`../../assets/images/${option.image_url}`);
 
 const InputRadio = ({ block, context }) => {
   const {
