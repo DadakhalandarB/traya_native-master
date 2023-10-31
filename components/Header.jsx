@@ -1,4 +1,4 @@
-"use client";
+"use client"
 
 import {
   TRAYA_HOME_URL,
@@ -14,15 +14,12 @@ import {
   HINDI_FORM,
   MINI_FORM,
 } from "../constants/routes";
-import { TRAYA_GUEST_HOME_URL } from "../constants/config";
+import { TRAYA_GUEST_HOME_URL } from "./../constants/config";
 import Image from "next/image";
 import Head from "next/head";
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 import { lazy } from "react";
-import { Button } from "@radix-ui/themes";
-import { RiDeleteBin5Line } from "react-icons/ri";
-const trayaLogo = require("../assets/images/traya.png");
 const DynamicClarity = lazy(() => import("../constants/windowClarity"));
 
 const Header = ({ showExit }) => {
@@ -52,23 +49,17 @@ const Header = ({ showExit }) => {
       });
     } else if (router.pathname == "/home/partners/questions") {
       router.push({
-        pathname: `/home/partners?utm_source=${
-          router.query.utm_source ? router.query.utm_source : ""
-        }&utm_medium=${
-          router.query.utm_medium ? router.query.utm_medium : ""
-        }&utm_campaign=${
-          router.query.utm_campaign ? router.query.utm_campaign : ""
-        }&page=partners`,
+        pathname: `/home/partners?utm_source=${router.query.utm_source ? router.query.utm_source : ""
+          }&utm_medium=${router.query.utm_medium ? router.query.utm_medium : ""
+          }&utm_campaign=${router.query.utm_campaign ? router.query.utm_campaign : ""
+          }&page=partners`,
       });
     } else if (router.pathname == "/home/partners/thankyou") {
       router.push({
-        pathname: `/home/partners?utm_source=${
-          router.query.utm_source ? router.query.utm_source : ""
-        }&utm_medium=${
-          router.query.utm_medium ? router.query.utm_medium : ""
-        }&utm_campaign=${
-          router.query.utm_campaign ? router.query.utm_campaign : ""
-        }&page=partners`,
+        pathname: `/home/partners?utm_source=${router.query.utm_source ? router.query.utm_source : ""
+          }&utm_medium=${router.query.utm_medium ? router.query.utm_medium : ""
+          }&utm_campaign=${router.query.utm_campaign ? router.query.utm_campaign : ""
+          }&page=partners`,
       });
     }
 
@@ -158,12 +149,11 @@ const Header = ({ showExit }) => {
         <link rel="icon" href="/favicon.ico" />
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
       </Head>
-      {/* <DynamicClarity /> */}
+      <DynamicClarity />
 
       <section
-        className={`${
-          isGenericHeader ? "h-20 bg-neutral-700" : "h-24 bg-[#414042]"
-        }`}
+        className={`${isGenericHeader ? "h-20 bg-neutral-700" : "h-24 bg-[#414042]"
+          }`}
       >
         {router.pathname == FEMALE ? (
           <div className="relative h-full px-4 pt-4 mx-auto overflow-hidden sm:px-8 lg:px-12 max-w-screen-2xl">
@@ -173,7 +163,7 @@ const Header = ({ showExit }) => {
               className="inline-flex items-center cursor-pointer"
             >
               <Image
-                src={trayaLogo.default}
+                src={require("../assets/images/traya.png").default}
                 alt="traya"
                 height={30}
                 width={96}
@@ -189,9 +179,8 @@ const Header = ({ showExit }) => {
           </div>
         ) : (
           <div
-            className={`h-full px-4 mx-auto overflow-hidden sm:px-8 lg:px-12 ${
-              isGenericHeader ? "relative" : ""
-            }`}
+            className={`h-full px-4 mx-auto overflow-hidden sm:px-8 lg:px-12 ${isGenericHeader ? "relative" : ""
+              }`}
           >
             {router.pathname !== CITATION && (
               <>
@@ -202,7 +191,7 @@ const Header = ({ showExit }) => {
                     className="inline-flex items-center cursor-pointer"
                   >
                     <Image
-                      src={trayaLogo.default}
+                      src={require("../assets/images/traya.png").default}
                       alt="traya"
                       height={30}
                       width={96}
@@ -219,22 +208,10 @@ const Header = ({ showExit }) => {
                   )}
                 </div>
                 {!isGenericHeader && (
-                  <div className="h-4 -mt-2 flex justify-between items-start">
+                  <div className="h-4 -mt-2">
                     <p className="text-[14px] font-sans font-[400] text-white">
-                      module This hair test is co-created with doctors
+                      This hair test is co-created with doctors
                     </p>
-                    <Button
-                      onClick={() => {
-                        localStorage.clear();
-                        router.push(
-                          `${pathname}?cohort=1&lcn=HomeSlideshow&page=homev2`
-                        );
-                      }}
-                    >
-                      <span className="flex space-x-10 items-center justify-between">
-                        <RiDeleteBin5Line /> clear localStorage
-                      </span>
-                    </Button>
                   </div>
                 )}
               </>

@@ -8,7 +8,7 @@ import {
 } from "../../constants/urls";
 import Loader from "../Loader";
 import { fetchRequest } from "../../helpers/fetchRequest";
-import InputAdditionalText from "../form/InputAdditionText";
+import InputAdditionalText from "../InputAdditionText";
 import Cookies from "js-cookie";
 import Image from "next/image";
 
@@ -26,16 +26,12 @@ import {
 } from "../../helpers/gtmHelpers";
 import { useRouter } from "next/navigation";
 import { FEMALE, SUBMISSION } from "../../constants/routes";
-import Router from "next/navigation";
+import Router from "next/router";
 import { QuestionsContext } from "../../context/questions-store";
-import {
-  handleCustomUserAttributes,
-  moengageTrackEvent,
-} from "../../helpers/handleMoengage";
-import { freshTrackEvent } from "../../api/handleFreshDesk";
+import { handleCustomUserAttributes, moengageTrackEvent } from "../../helpers/handleMoengage";
+// import { freshTrackEvent } from "../../pages/api/handleFreshDesk";
 import { getCurrentTimeInReadableForm } from "../../helpers/timeFormatter";
 import { activityLoggerForm } from "../../helpers/activityLogger";
-const optionName = require(`../../assets/images/${option.image_url}`);
 
 const InputRadio = ({ block, context }) => {
   const router = useRouter();
@@ -81,8 +77,7 @@ const InputRadio = ({ block, context }) => {
     if (block.fn) block.next = jsonLogic.apply(block.fn, { reply });
     try {
       const maleStage = window.localStorage.getItem("2e");
-      const _skipBpQuestion =
-        ["Stage-1", "Heavy Hair Fall"].includes(maleStage) && block.id == "3f1";
+      const _skipBpQuestion = (['Stage-1', "Heavy Hair Fall"].includes(maleStage) && block.id == "3f1");
       const _formData = {
         question_id: block.id,
         question: block.text,
@@ -173,10 +168,10 @@ const InputRadio = ({ block, context }) => {
     const _reply = reply;
     if (block.id === "hair_vol1") {
       window.localStorage.setItem("2e", _reply);
-    } else if (block.id === "hair_goals2") {
-      window.localStorage.setItem("hair_goals2", reply);
-    } else if (block.id === "feel_hair_fall") {
-      window.localStorage.setItem("feel_hair_fall", reply);
+    } else if (block.id === 'hair_goals2') {
+      window.localStorage.setItem('hair_goals2', reply);
+    } else if (block.id === 'feel_hair_fall') {
+      window.localStorage.setItem('feel_hair_fall', reply);
     }
     if (block.id === "gender") {
       window.localStorage.setItem("gender", reply);
@@ -266,9 +261,8 @@ const InputRadio = ({ block, context }) => {
       {isLoading && <Loader />}
 
       <div
-        className={`flex flex-col mt-8 sm:mt-8 sm:space-y-2 ${
-          block.showImages ? "w-full md:w-[60%]" : "w-full md:w-[60%]"
-        }`}
+        className={`flex flex-col mt-8 sm:mt-8 sm:space-y-2 ${block.showImages ? "w-full md:w-[60%]" : "w-full md:w-[60%]"
+          }`}
       >
         <label
           className="text-[20px] md:text-[24px] font-bold text-gray-700"
@@ -281,26 +275,26 @@ const InputRadio = ({ block, context }) => {
           {block.sub_text}
         </label>
         <div
-          className={`flex ${
-            block.showImages
+          className={`flex ${block.showImages
               ? "w-[100%] border-b pb-2 grid grid-cols-2 md:grid-cols-4 gap-1 mb-8 xl:mb-0 mx-auto"
               : "flex-col md:ml-2"
-          }`}
+            }`}
         >
           {block.optionMap?.map((option, index) => (
             <label
               htmlFor={getGTMElementID(option, block, index)}
               key={option.name}
               data-options="responses"
-              className={`inline-flex py-3 md:py-1 cursor-pointer ${
-                block.showImages
+              className={`inline-flex py-3 md:py-1 cursor-pointer ${block.showImages
                   ? "flex-col flex-1 bg-gray-100 items-center px-5 justify-center rounded-md"
                   : "border-b"
-              }`}
+                }`}
             >
               {block.showImages && (
                 <Image
-                  src={optionName.default}
+                  src={
+                    require(`../../assets/images/${option.image_url}`).default
+                  }
                   alt={option.name}
                   className="flex-1 mb-1"
                   height={100}
@@ -311,9 +305,8 @@ const InputRadio = ({ block, context }) => {
               <div className="inline-flex  flex-col py-0 md:py-2 flex-1 sm:flex-row sm:items-center">
                 <div
                   // className="inline-flex items-center pl-2"
-                  className={`${
-                    block.showImages ? "pl-0" : "pl-2"
-                  } inline-flex items-center`}
+                  className={`${block.showImages ? "pl-0" : "pl-2"
+                    } inline-flex items-center`}
                 >
                   <input
                     className="cursor-pointer form-radio text-brand-accent"
@@ -325,11 +318,10 @@ const InputRadio = ({ block, context }) => {
                     value={option.value}
                   />
                   <p
-                    className={`md:whitespace-nowrap ${
-                      block.showImages
+                    className={`md:whitespace-nowrap ${block.showImages
                         ? "text-[14px] md:text-[14px] ml-1.5"
                         : "text-[16px] md:text-[18px] px-3"
-                    }`}
+                      }`}
                   >
                     {option.name}
                   </p>
