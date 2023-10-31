@@ -5,12 +5,11 @@ import Image from "next/image";
 import Link from "next/link";
 import Script from "next/script";
 import { useEffect, useState } from "react";
-import { CDN_BASE_URL } from "../../constants/config";
 import FooterEndRow from "./FooterEndRow";
 import LowerFooter from "./LowerFooter";
+import { AppStoreIcon, GooglePlayIcon } from "@/constants/constants";
 
-const GooglePlayIcon = `${CDN_BASE_URL}website_images/localImages/play_store.webp`;
-const AppStoreIcon = `${CDN_BASE_URL}website_images/localImages/app_store.webp`;
+
 
 function FooterPage() {
   const [pageURL, setPageURL] = useState("");
@@ -88,7 +87,7 @@ function FooterPage() {
                 </div>
               </div>
               {["xl", "lg", "md"].includes(screenSize) && (
-                <div className="xl:block lg:block md:block hidden w-6/12">
+                <div className="w-6/12">
                   <p
                     className="text-white"
                     style={{

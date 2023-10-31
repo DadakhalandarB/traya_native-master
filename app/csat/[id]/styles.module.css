@@ -1,0 +1,15 @@
+.emoji-icon {
+  transition: transform 0.2s ease-in-out;
+}
+
+.emoji-icon.zoom-out {
+  transform: scale(1.3);
+}
+.emoji-description {
+  transition: font-size 0.2s ease-in-out;
+}
+
+.emoji-description.zoom-out {
+  font-size: 12px;
+  margin-top:15px;
+}

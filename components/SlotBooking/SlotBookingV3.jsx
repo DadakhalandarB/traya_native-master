@@ -13,8 +13,8 @@ import { QuestionsContext } from "../../context/questions-store";
 import { fetchRequest } from "../../helpers/fetchRequest";
 import { groupSlots } from "./handler";
 
-import DateListV3 from "../appoinetment/DateListV3";
-import SlotsListV3 from "../appoinetment/SlotsListV3";
+import DateListV3 from "../appointment/DateListV3";
+import SlotsListV3 from "../appointment/SlotsListV3";
 
 import { DEFAULT_API_URL } from "../../constants/config";
 import { moengageTrackEvent } from "../../helpers/handleMoengage";

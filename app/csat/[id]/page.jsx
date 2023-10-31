@@ -1,9 +1,12 @@
-import React from 'react'
+import React from "react";
+import CSATForm from "./CSATForm";
 
 const page = () => {
   return (
-    <div>page</div>
-  )
-}
+    <div>
+      <CSATForm />
+    </div>
+  );
+};
 
-export default page
+export default page;

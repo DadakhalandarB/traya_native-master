@@ -23,7 +23,7 @@ const SafeAndScientific = () => {
             alt="safe and scientific"
             width={864}
             height={420}
-            responsive
+            responsive={true}
             loading="lazy"
           />
         </div>
@@ -34,7 +34,7 @@ const SafeAndScientific = () => {
               alt="safe and scientific"
               width={327}
               height={521}
-              responsive
+              responsive={true}
               loading="lazy"
             />
           </div>

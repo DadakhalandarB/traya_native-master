@@ -11,18 +11,16 @@ import {
   MINI_FORM,
 } from "@constants/routes";
 import {
-  CDN_BASE_URL,
   TRAYA_BOOK_CALL_PAGE,
   TRAYA_GUEST_HOME_URL,
   TRAYA_HINDI_HOME_URL,
   TRAYA_HOME_URL,
-  TRAYA_PAGES,
+  TRAYA_PAGES
 } from "@constants/config";
-import { TRAYA_MINI_HOME_URL } from "@constants/constants";
+import { TRAYA_MINI_HOME_URL, trayalogo } from "@constants/constants";
 import { useRouter } from "next/navigation";
 import { CartContext } from "@context/cart-store";
 import { MD5 } from "crypto-js";
-const trayalogo = `${CDN_BASE_URL}website_images/localImages/traya.webp`;
 
 function ResultHeader(props) {
   const [pageURL, setPageURL] = useState("");
@@ -49,7 +47,7 @@ function ResultHeader(props) {
     } else {
       setPageURL(tempUTM ? tempUTM : "");
     }
-  });
+  },[]);
 
   const logoURL = () => {
     if (pageURL == "femalev2") {

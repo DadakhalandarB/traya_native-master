@@ -1,8 +1,9 @@
+import RedirectionComponent from '@/components/commonRedirection/RedirectionComponent'
 import React from 'react'
 
 const page = () => {
   return (
-    <div>page</div>
+    <RedirectionComponent url={'/home'} statusCode={301}/>
   )
 }
 

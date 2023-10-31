@@ -3,52 +3,13 @@ import { useState, useMemo } from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import { CDN_BASE_URL } from "../../constants/config";
-
-// images comes here
-
-const left = `${CDN_BASE_URL}website_images/localImages/left.webp`;
-const right = `${CDN_BASE_URL}website_images/localImages/right.webp`;
+import { SampleNextArrow, SamplePrevArrow } from "@/constants/functions";
 
 export default function ProductSlider(props) {
-  const [currentSlide, setCurrentSlide] = useState(0);
-
   const images = useMemo(() => {
     if (props.SliderData == undefined) return [];
     return props.SliderData;
   }, [props.SliderData]);
-
-  function SampleNextArrow(props) {
-    const { className, style, onClick } = props;
-    return (
-      <div className={className}>
-        <Image
-          src={right}
-          alt="left arrow"
-          onClick={onClick}
-          loader={props.loader}
-          fill
-        />
-      </div>
-    );
-  }
-
-  function SamplePrevArrow(props) {
-    const { className, style, onClick } = props;
-    return (
-      <div className={className}>
-        <Image
-          src={left}
-          alt="left arrow"
-          onClick={onClick}
-          className="xs:hidden"
-          loader={props.loader}
-          // unoptimized={true}
-          fill
-        />
-      </div>
-    );
-  }
 
   let settings = {
     dots: true,
@@ -99,8 +60,8 @@ export default function ProductSlider(props) {
     speed: 500,
     slidesToShow: 1,
     slidesToScroll: 1,
-    nextArrow: <SampleNextArrow />,
-    prevArrow: <SamplePrevArrow />,
+    nextArrow: <SampleNextArrow variant={"light"} />,
+    prevArrow: <SamplePrevArrow variant={"light"} />,
   };
 
   let settingsMobile = {
@@ -135,7 +96,7 @@ export default function ProductSlider(props) {
           {images.map((image, index) => {
             return (
               <Image
-                key={index}
+                key={`image-${index}`}
                 src={image.image_url.productUrl}
                 objectFit="contain"
                 className="animate-fadeIn"
@@ -165,7 +126,7 @@ export default function ProductSlider(props) {
           {images.map((image, index) => {
             return (
               <Image
-                key={index}
+                key={`image-${index}`}
                 src={image.image_url.mobileImgUrl}
                 objectFit="contain"
                 // responsive

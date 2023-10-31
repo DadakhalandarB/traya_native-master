@@ -12,8 +12,8 @@ import { QuestionsContext } from "../../context/questions-store";
 import { fetchRequest } from "../../helpers/fetchRequest";
 import { groupSlots } from "./handler";
 
-import DateList from "../appoinetment/DateList";
-import SlotsList from "../appoinetment/SlotsList";
+import DateList from "../appointment/DateList";
+import SlotsList from "../appointment/SlotsList";
 
 export const SlotBooking = ({
   caseId,

@@ -6,11 +6,9 @@ import "./Home.module.css";
 import "./review.css";
 import "./testimonials.css";
 
-import { Inter, Fredoka, Nunito, Mukta } from "@next/font/google";
+import { Inter } from "next/font/google";
 import "@radix-ui/themes/styles.css";
 import { Theme } from "@radix-ui/themes";
-import Header from "../components/Header";
-
 
 const inter = Inter({ subsets: ["latin"] });
 

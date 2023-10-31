@@ -4,9 +4,7 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { CDN_BASE_URL } from "@/constants/config";
 import { fredoka } from "@/constants/fontConfig";
-
-const left = `${CDN_BASE_URL}website_images/localImages/left.webp`;
-const right = `${CDN_BASE_URL}website_images/localImages/right.webp`;
+import { SampleNextArrow, SamplePrevArrow } from "@/constants/functions";
 
 function OurDoctors(props) {
   let productItemImgSettings = {
@@ -50,32 +48,10 @@ function OurDoctors(props) {
     speed: 500,
     slidesToShow: 3,
     slidesToScroll: 1,
-    nextArrow: <SampleNextArrow />,
-    prevArrow: <SamplePrevArrow />,
+    nextArrow: <SampleNextArrow variant={"light"}/>,
+    prevArrow: <SamplePrevArrow variant={"light"}/>,
   };
-  function SampleNextArrow(props) {
-    const { className, onClick } = props;
-    return (
-      <div className={className}>
-        <Image src={right} alt="left arrow" onClick={onClick} fill />
-      </div>
-    );
-  }
 
-  function SamplePrevArrow(props) {
-    const { className, onClick } = props;
-    return (
-      <div className={className}>
-        <Image
-          src={left}
-          alt="left arrow"
-          onClick={onClick}
-          className="xs:hidden"
-          fill
-        />
-      </div>
-    );
-  }
   return (
     <>
       <div className="w-11/12 xl:w-9/12 lgl:w-9/12 md:w-9/12 mx-auto xl:mt-10 md:mt-10 lg:mt-10 mt-0">

@@ -30,8 +30,7 @@ const mic = `${CDN_BASE_URL}website_images/localImages/mic.webp`;
 const flash = `${CDN_BASE_URL}website_images/localImages/flash.webp`;
 const rightTo = `${CDN_BASE_URL}website_images/localImages/toRight.webp`;
 const close = `${CDN_BASE_URL}website_images/localImages/close.webp`;
-const left = `${CDN_BASE_URL}website_images/localImages/left.webp`;
-const right = `${CDN_BASE_URL}website_images/localImages/right.webp`;
+
 
 const PLATFORM = "web_native";
 import {
@@ -49,6 +48,7 @@ import {
 } from "@/helpers/handleMoengage";
 import { getCurrentTimeInReadableForm } from "@/helpers/timeFormatter";
 import { fredoka, nunito } from "@/constants/fontConfig";
+import { SampleNextArrow, SamplePrevArrow } from "@/constants/functions";
 
 const classNames = {
   25: "rootcause-color25",
@@ -120,8 +120,8 @@ function DynamicResultComponent(props) {
     speed: 500,
     slidesToShow: 5,
     slidesToScroll: 1,
-    nextArrow: <SampleNextArrow />,
-    prevArrow: <SamplePrevArrow />,
+    nextArrow: <SampleNextArrow variant={"light"}/>,
+    prevArrow: <SamplePrevArrow variant={"light"}/>,
   };
 
   const womenData = [
@@ -176,38 +176,6 @@ function DynamicResultComponent(props) {
       name: "Anuu",
     },
   ];
-  function SampleNextArrow(props) {
-    const { className, style, onClick } = props;
-    return (
-      <div className={className}>
-        <Image
-          src={right}
-          alt="left arrow"
-          onClick={onClick}
-          loader={props.loader}
-          unoptimized={true}
-          layout="fill"
-        />
-      </div>
-    );
-  }
-
-  function SamplePrevArrow(props) {
-    const { className, style, onClick } = props;
-    return (
-      <div className={className}>
-        <Image
-          src={left}
-          alt="left arrow"
-          onClick={onClick}
-          className="xs:hidden"
-          loader={props.loader}
-          unoptimized={true}
-          layout="fill"
-        />
-      </div>
-    );
-  }
 
   // modal for root Causes
   const [showModal, setShowModal] = useState(false);

@@ -5,9 +5,7 @@ import "slick-carousel/slick/slick-theme.css";
 import { useState, useMemo } from "react";
 
 import { CDN_BASE_URL } from "../../constants/config";
-
-const left = `${CDN_BASE_URL}website_images/localImages/left.webp`;
-const right = `${CDN_BASE_URL}website_images/localImages/right.webp`;
+import { SampleNextArrow, SamplePrevArrow } from "@/constants/functions";
 
 const anonymos1 = `${CDN_BASE_URL}website_images/localImages/maleresult/ananoymos1.webp`;
 const anonymos2 = `${CDN_BASE_URL}website_images/localImages/maleresult/ananoymos2.webp`;
@@ -22,36 +20,7 @@ const uddesia1 = `${CDN_BASE_URL}website_images/localImages/maleresult/uddesia1.
 const uddesia2 = `${CDN_BASE_URL}website_images/localImages/maleresult/uddesia2.webp`;
 const uddesia3 = `${CDN_BASE_URL}website_images/localImages/maleresult/uddesia3.webp`;
 
-function SampleNextArrow(props) {
-  const { className, style, onClick } = props;
-  return (
-    <div className={className}>
-      <Image
-        src={right}
-        alt="left arrow"
-        onClick={onClick}
-        fill
-        loading="lazy"
-      />
-    </div>
-  );
-}
 
-function SamplePrevArrow(props) {
-  const { className, style, onClick } = props;
-  return (
-    <div className={className}>
-      <Image
-        src={left}
-        alt="left arrow"
-        onClick={onClick}
-        className="xs:hidden"
-        fill
-        loading="lazy"
-      />
-    </div>
-  );
-}
 
 let settings = {
   dots: false,
@@ -61,8 +30,8 @@ let settings = {
   slidesToScroll: 1,
   autoplay: true,
   autoplaySpeed: 2000,
-  nextArrow: <SampleNextArrow />,
-  prevArrow: <SamplePrevArrow />,
+  nextArrow: <SampleNextArrow variant={"light"}/>,
+  prevArrow: <SamplePrevArrow variant={"light"}/>,
 };
 let settingsNoArrow = {
   dots: false,
@@ -513,7 +482,7 @@ export default function MaleReview() {
       <div className=" justify-center xl:flex md:flex lg:flex xs:hidden">
         <Slider
           {...settings}
-          className="xl:w-7/12 xs:w-10/12 flex items-center justify-center rounded-2xl  shadow-xl "
+          className="xl:w-7/12 xs:w-11/12  flex items-center justify-center rounded-2xl  shadow-xl "
         >
           {maleReview.map((value, index) => {
             return (
@@ -527,7 +496,7 @@ export default function MaleReview() {
       <div className=" justify-center  xl:hidden md:hidden lg:hidden xs:flex">
         <Slider
           {...settingsNoArrow}
-          className="xl:w-7/12 xs:w-10/12 flex items-center justify-center rounded-2xl  shadow-xl "
+          className="xl:w-7/12 xs:w-11/12 flex items-center justify-center rounded-2xl  shadow-xl "
         >
           {maleReview.map((value, index) => {
             return (

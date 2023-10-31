@@ -2,10 +2,9 @@ import Image from "next/image";
 import React from "react";
 import Slider from "react-slick";
 const DynamicSlider = dynamic(() => import("../SliderComponent"));
-import left from "@assets/images/left.png";
-import right from "@assets/images/right.png";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import { SampleNextArrow, SamplePrevArrow } from "@/constants/functions";
 
 const FemaleRootCasuse = () => {
   const productListImgData = [
@@ -267,40 +266,10 @@ const FemaleRootCasuse = () => {
     speed: 500,
     slidesToShow: 4,
     slidesToScroll: 1,
-    nextArrow: <SampleNextArrow />,
-    prevArrow: <SamplePrevArrow />,
+    nextArrow: <SampleNextArrow variant={"dark"}/>,
+    prevArrow: <SamplePrevArrow variant={"dark"}/>,
   };
-  function SampleNextArrow(props) {
-    const { className, style, onClick } = props;
-    return (
-      <div className={className}>
-        <Image
-          src={right}
-          alt="left arrow"
-          onClick={onClick}
-          loader={props.loader}
-          unoptimized={true}
-          loading="lazy"
-        />
-      </div>
-    );
-  }
-  function SamplePrevArrow(props) {
-    const { className, style, onClick } = props;
-    return (
-      <div className={className}>
-        <Image
-          src={left}
-          alt="left arrow"
-          onClick={onClick}
-          className="xs:hidden"
-          loader={props.loader}
-          unoptimized={true}
-          loading="lazy"
-        />
-      </div>
-    );
-  }
+
   return (
     <div>
       {" "}

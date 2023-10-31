@@ -1,9 +1,14 @@
-import React from 'react'
+import Header from "@/components/generic/Header";
+import Questions from "@/components/generic/Questions";
+import QuestionsContextProvider from "@/context/questions-store";
 
-const page = () => {
+export default function page() {
   return (
-    <div>page</div>
-  )
+    <>
+      <Header />
+      <QuestionsContextProvider>
+        <Questions />
+      </QuestionsContextProvider>
+    </>
+  );
 }
-
-export default page

@@ -13,8 +13,8 @@ import {
   GET_SLOTS_API,
   GET_ONBOARDING_SLOTS_API,
 } from "../../constants/urls";
-import DateListV2 from "../appoinetment/DateListV2";
-import SlotsListV2 from "../appoinetment/SlotsListV2";
+import DateListV2 from "../appointment/DateListV2";
+import SlotsListV2 from "../appointment/SlotsListV2";
 import { DEFAULT_API_URL } from "../../constants/config";
 import { fetchRequest } from "../../helpers/fetchRequest";
 import { QuestionsContext } from "../../context/questions-store";

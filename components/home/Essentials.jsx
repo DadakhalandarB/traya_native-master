@@ -1,4 +1,4 @@
-import { CDN_BASE_URL } from "@/constants/config";
+
 import { nunito } from "@/constants/fontConfig";
 import { CartContext } from "@/context/cart-store";
 import { gtmEcommerce } from "@/helpers/gtmHelpers";
@@ -7,6 +7,7 @@ import React, { useContext } from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import { SampleNextArrow, SamplePrevArrow } from "@/constants/functions";
 
 
 const Essentials = ({ props }) => {
@@ -30,8 +31,6 @@ const Essentials = ({ props }) => {
     gtmEcommerce(gtmObj, "nt_select_item");
   };
   const { addItemToCart } = useContext(CartContext);
-  const left = `${CDN_BASE_URL}website_images/localImages/left.webp`;
-  const right = `${CDN_BASE_URL}website_images/localImages/right.webp`;
   let productSettings = {
     dots: false,
     autoplay: false,
@@ -79,43 +78,10 @@ const Essentials = ({ props }) => {
     speed: 500,
     slidesToShow: 3,
     slidesToScroll: 1,
-    nextArrow: <SampleNextArrow />,
-    prevArrow: <SamplePrevArrow />,
+    nextArrow: <SampleNextArrow variant={"light"}/>,
+    prevArrow: <SamplePrevArrow variant={"light"}/>,
   };
-  function SampleNextArrow(props) {
-    const { className, onClick } = props;
-    return (
-      <div className={className}>
-        <Image
-          src={right}
-          alt="left arrow"
-          onClick={onClick}
-          loader={props.loader}
-          unoptimized={true}
-          fill
-          loading="lazy"
-        />
-      </div>
-    );
-  }
 
-  function SamplePrevArrow(props) {
-    const { className, onClick } = props;
-    return (
-      <div className={className}>
-        <Image
-          src={left}
-          alt="left arrow"
-          onClick={onClick}
-          className="xs:hidden"
-          loader={props.loader}
-          unoptimized={true}
-          fill
-          loading="lazy"
-        />
-      </div>
-    );
-  }
   return (
     <div>
       <div className="block mx-auto xl:w-full px-6 lg:w-full md:w-full w-11/12 xl:mt-4 ">

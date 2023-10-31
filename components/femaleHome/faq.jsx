@@ -6,6 +6,7 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { CDN_BASE_URL } from "@/constants/config";
 import { fredoka } from "@/constants/fontConfig";
+import { SampleNextArrow, SamplePrevArrow } from "@/constants/functions";
 // images comes here
 
 const left = `${CDN_BASE_URL}website_images/localImages/left.webp`;
@@ -377,43 +378,10 @@ function FAQ({ login }) {
     speed: 500,
     slidesToShow: login ? 3 : 4,
     slidesToScroll: 1,
-    nextArrow: <SampleNextArrow />,
-    prevArrow: <SamplePrevArrow />,
+    nextArrow: <SampleNextArrow variant={"light"} />,
+    prevArrow: <SamplePrevArrow variant={"light"} />,
   };
-  function SampleNextArrow(props) {
-    const { className, style, onClick } = props;
-    return (
-      <div className={className}>
-        <Image
-          src={right}
-          alt="left arrow"
-          onClick={onClick}
-          loader={props.loader}
-          unoptimized={true}
-          fill
-          loading="lazy"
-        />
-      </div>
-    );
-  }
 
-  function SamplePrevArrow(props) {
-    const { className, style, onClick } = props;
-    return (
-      <div className={className}>
-        <Image
-          src={left}
-          alt="left arrow"
-          onClick={onClick}
-          className="xs:hidden"
-          loader={props.loader}
-          unoptimized={true}
-          fill
-          loading="lazy"
-        />
-      </div>
-    );
-  }
   return (
     <>
       <div>

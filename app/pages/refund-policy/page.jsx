@@ -1,9 +1,13 @@
-import React from 'react'
+import RefundPolicyComponent from "@/components/refund/RefundPolicyComponent";
+import CartContextProvider from "@/context/cart-store";
+import React from "react";
 
 const page = () => {
   return (
-    <div>page</div>
-  )
-}
+    <CartContextProvider>
+      <RefundPolicyComponent />
+    </CartContextProvider>
+  );
+};
 
-export default page
+export default page;

@@ -1,9 +1,13 @@
-import React from 'react'
+import CustomStoriesComponent from "@/components/CustomerStories/CustomStories";
+import CartContextProvider from "@/context/cart-store";
+import React from "react";
 
 const page = () => {
   return (
-    <div>page</div>
-  )
-}
+    <CartContextProvider>
+      <CustomStoriesComponent />;
+    </CartContextProvider>
+  );
+};
 
-export default page
+export default page;

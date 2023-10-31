@@ -4,9 +4,9 @@ import useScreenSize from "@/hooks/useScreenSize";
 import Image from "next/image";
 import Link from "next/link";
 import PopularSearches from "./PopularSearches";
+import { trayalogo } from "@/constants/constants";
 
 const LowerFooter = () => {
-  const TrayaLogo = `${CDN_BASE_URL}website_images/localImages/traya.webp`;
   const screenSize = useScreenSize();
   return (
     <div>
@@ -20,7 +20,7 @@ const LowerFooter = () => {
                     <Image
                       className="ls-is-cached lazyloaded"
                       alt="cstm_footer_logo"
-                      src={TrayaLogo}
+                      src={trayalogo}
                       width="165"
                       height="52"
                       loading="lazy"

@@ -1,9 +1,12 @@
-import React from 'react'
+import DoctorAppointmentThankYou from "@/components/generic/DoctorAppointmentThankYou";
+import React from "react";
 
 const page = () => {
   return (
-    <div>page</div>
-  )
-}
+    <div>
+      <DoctorAppointmentThankYou />
+    </div>
+  );
+};
 
-export default page
+export default page;

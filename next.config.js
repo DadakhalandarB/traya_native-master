@@ -3,6 +3,7 @@ module.exports = {
   reactStrictMode: true,
   experimental: {
     outputStandalone: true,
+    serverActions: true,
   },
   publicRuntimeConfig: {
     DEFAULT_API_URL: process.env.NEXT_PUBLIC_DEFAULT_API_URL,

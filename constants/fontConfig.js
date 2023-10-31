@@ -1,4 +1,4 @@
-import { Inter, Fredoka, Nunito, Mukta } from "@next/font/google";
+import { Inter, Fredoka, Nunito, Mukta } from "next/font/google";
 
 export const fredoka = Fredoka({
   family: "Fredoka One",
@@ -24,3 +24,4 @@ export const mukta = Mukta({
   variable: "font-family",
   weight: ["300"],
 });
+

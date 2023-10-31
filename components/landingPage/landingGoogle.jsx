@@ -2,35 +2,10 @@ import Image from "next/image";
 import { useState } from "react";
 import { CDN_BASE_URL } from "../../constants/config";
 import dynamic from "next/dynamic";
+import { SampleNextArrow, SamplePrevArrow } from "@/constants/functions";
 
 const Google = `${CDN_BASE_URL}website_images/localImages/google-icon.webp`;
-const left = `${CDN_BASE_URL}website_images/localImages/left.webp`;
-const right = `${CDN_BASE_URL}website_images/localImages/right.webp`;
 const DynamicSlider = dynamic(() => import("../SliderComponent"));
-
-function SampleNextArrow(props) {
-  const { className, style, onClick } = props;
-  return (
-    <div className={className}>
-      <Image src={right} alt="left arrow" onClick={onClick} fill />
-    </div>
-  );
-}
-
-function SamplePrevArrow(props) {
-  const { className, style, onClick } = props;
-  return (
-    <div className={className}>
-      <Image
-        src={left}
-        alt="left arrow"
-        onClick={onClick}
-        className="xs:hidden"
-        fill
-      />
-    </div>
-  );
-}
 
 let settings1 = {
   infinite: true,
@@ -75,8 +50,8 @@ let settings1 = {
     },
   ],
   autoplaySpeed: 2000,
-  nextArrow: <SampleNextArrow />,
-  prevArrow: <SamplePrevArrow />,
+  nextArrow: <SampleNextArrow variant={"light"} />,
+  prevArrow: <SamplePrevArrow variant={"light"} />,
 };
 let settings2 = {
   infinite: true,
@@ -121,8 +96,8 @@ let settings2 = {
     },
   ],
   autoplaySpeed: 2000,
-  nextArrow: <SampleNextArrow />,
-  prevArrow: <SamplePrevArrow />,
+  nextArrow: <SampleNextArrow variant={"light"} />,
+  prevArrow: <SamplePrevArrow variant={"light"} />,
 };
 
 export default function GoogleReview(props) {

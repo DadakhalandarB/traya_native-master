@@ -10,7 +10,8 @@
       "@constants/*": ["constants/*"],
       "@assets/*": ["assets/*"],
       "@landingPage/*": ["components/landingPage/*"],
-      "@utils": ["utils"]
+      "@utils": ["utils"],
+      "@services": ["services/*"]
     }
   }
 }

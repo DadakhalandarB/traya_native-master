@@ -8,7 +8,7 @@ import { NEW_RESULT_API } from "../../constants/urls";
 import { CartContext } from "../../context/cart-store";
 import { gtmEcommerce } from "../../helpers/gtmHelpers";
 import dynamic from "next/dynamic";
-const DynamicHeader = dynamic(() => import("../femaleShopifyHeader"));
+const DynamicHeader = dynamic(() => import("../femaleHome/femaleShopifyHeader"));
 const DynamicFormMainShopifyComponent = dynamic(() =>
   import("./FormMainShopifyComponent")
 );

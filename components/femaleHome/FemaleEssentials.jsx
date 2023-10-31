@@ -3,8 +3,7 @@ import { fredoka, nunito } from "@/constants/fontConfig";
 import Image from "next/image";
 import React from "react";
 import Slider from "react-slick";
-import left from "@assets/images/left.png";
-import right from "@assets/images/right.png";
+import { SampleNextArrow, SamplePrevArrow } from "@/constants/functions";
 
 const EssentialsData = [
   {
@@ -142,41 +141,10 @@ const FemaleEssentials = ({ props }) => {
     speed: 500,
     slidesToShow: 3,
     slidesToScroll: 1,
-    nextArrow: <SampleNextArrow />,
-    prevArrow: <SamplePrevArrow />,
+    nextArrow: <SampleNextArrow variant={"dark"} />,
+    prevArrow: <SamplePrevArrow variant={"dark"} />,
   };
 
-  function SampleNextArrow(props) {
-    const { className, style, onClick } = props;
-    return (
-      <div className={className}>
-        <Image
-          src={right}
-          alt="left arrow"
-          onClick={onClick}
-          loader={props.loader}
-          unoptimized={true}
-          loading="lazy"
-        />
-      </div>
-    );
-  }
-  function SamplePrevArrow(props) {
-    const { className, style, onClick } = props;
-    return (
-      <div className={className}>
-        <Image
-          src={left}
-          alt="left arrow"
-          onClick={onClick}
-          className="xs:hidden"
-          loader={props.loader}
-          unoptimized={true}
-          loading="lazy"
-        />
-      </div>
-    );
-  }
   return (
     <div>
       <div className="block mx-auto xl:w-full lg:w-full md:w-full w-11/12 mt-12 ">

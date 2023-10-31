@@ -5,41 +5,8 @@ import "slick-carousel/slick/slick-theme.css";
 import { useState, useMemo } from "react";
 
 import { CDN_BASE_URL } from "../../constants/config";
+import { SampleNextArrow, SamplePrevArrow } from "@/constants/functions";
 
-const left = `${CDN_BASE_URL}website_images/localImages/left.webp`;
-const right = `${CDN_BASE_URL}website_images/localImages/right.webp`;
-
-function SampleNextArrow(props) {
-  const { className, style, onClick } = props;
-  return (
-    <div className={className} style={{ width: "20px", height: "20px" }}>
-      <Image
-        src={right}
-        alt="left arrow"
-        onClick={onClick}
-        fill
-        loading="lazy"
-      />
-    </div>
-  );
-}
-
-function SamplePrevArrow(props) {
-  const { className, style, onClick } = props;
-  return (
-    <div className={className} style={{ width: "20px", height: "20px" }}>
-      <Image
-        src={left}
-        alt="left arrow"
-        onClick={onClick}
-        className="xs:hidden"
-        fill
-        sizes={"50px"}
-        loading="lazy"
-      />
-    </div>
-  );
-}
 
 let settings = {
   dots: false,
@@ -49,8 +16,8 @@ let settings = {
   slidesToScroll: 1,
   autoplay: false,
   autoplaySpeed: 2000,
-  nextArrow: <SampleNextArrow />,
-  prevArrow: <SamplePrevArrow />,
+  nextArrow: <SampleNextArrow variant="light" />,
+  prevArrow: <SamplePrevArrow variant="light" />,
 };
 export default function FemaleReview() {
   const [showFullContent, setShowFullContent] = useState(false);

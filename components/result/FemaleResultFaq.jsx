@@ -7,12 +7,9 @@ import "slick-carousel/slick/slick-theme.css";
 // images comes here
 import { CDN_BASE_URL } from "@/constants/config";
 import { fredoka } from "@/constants/fontConfig";
-
-const left = `${CDN_BASE_URL}website_images/localImages/left.webp`;
-const right = `${CDN_BASE_URL}website_images/localImages/right.webp`;
+import { SampleNextArrow, SamplePrevArrow } from "@/constants/functions";
 
 function FemaleResultFaq() {
-  const [showFaq, setFaq] = useState(false);
   const [faqContentHeader, setFaqContentHeader] = useState("");
   const [faqContentBody, setFaqContentBody] = useState("");
   const [showModal, setShowModal] = useState(false);
@@ -340,42 +337,10 @@ function FemaleResultFaq() {
     speed: 500,
     slidesToShow: 4,
     slidesToScroll: 1,
-    nextArrow: <SampleNextArrow />,
-    prevArrow: <SamplePrevArrow />,
+    nextArrow: <SampleNextArrow variant={"light"}/>,
+    prevArrow: <SamplePrevArrow variant={"light"}/>,
   };
 
-  function SampleNextArrow(props) {
-    const { className, style, onClick } = props;
-    return (
-      <div className={className}>
-        <Image
-          src={right}
-          alt="left arrow"
-          onClick={onClick}
-          loader={props.loader}
-          unoptimized={true}
-          fill
-        />
-      </div>
-    );
-  }
-
-  function SamplePrevArrow(props) {
-    const { className, style, onClick } = props;
-    return (
-      <div className={className}>
-        <Image
-          src={left}
-          alt="left arrow"
-          onClick={onClick}
-          className="xs:hidden"
-          loader={props.loader}
-          unoptimized={true}
-          fill
-        />
-      </div>
-    );
-  }
   return (
     <>
       <div>

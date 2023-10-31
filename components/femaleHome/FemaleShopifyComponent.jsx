@@ -1,4 +1,4 @@
-"use client"
+"use client";
 
 import { useEffect, useState, useContext } from "react";
 import Head from "next/head";
@@ -9,23 +9,25 @@ import { gtmEcommerce } from "../../helpers/gtmHelpers";
 import { fetchRequest } from "../../helpers/fetchRequest";
 import useCustomRouter from "../../constants/useCustomRouter";
 import dynamic from "next/dynamic";
-const DynamicHeader = dynamic(() => import("../femaleShopifyHeader"));
-const DynamicFemaleMainComponent= dynamic(() => import("./FemaleMainComponent"));
-
-function FemaleShopifyComponent({productsData}) {
+const DynamicHeader = dynamic(() => import("./femaleShopifyHeader"));
+const DynamicFemaleMainComponent = dynamic(() =>
+  import("./FemaleMainComponent")
+);
+export const metadata = {
+  title: `Female`,
+  description: `Wondering how to stop hair loss? At Traya Health, we use the approach of Ayurveda, Dermatology and Nutrition to provide doctor Recommended hair fall solutions. Find the root cause of your hair loss now.`,
+};
+function FemaleShopifyComponent({ productsData }) {
   const [showSidebar, setShowSidebar] = useState(false);
   const [cartData, setCartData] = useState([]);
   const [totalPrice, setTotalPrice] = useState(null);
   const [cartItemCount, setCartItemCount] = useState(0);
   const [discountHandle, setDiscountHandle] = useState("");
   const [placeOrderClicked, setPlaceOrderClicked] = useState(false);
-  const [productData, setProductData] = useState([]);
   const [syntheticId, setSyntheticId] = useState("");
   const [showMyRecc, setShowMyRecc] = useState(false);
   const [globaCart, setGlobalCart] = useState([]);
   const router = useCustomRouter();
-  
-
 
   useEffect(() => {
     const synthId = window.localStorage.getItem("resultSynthetic");
@@ -39,7 +41,7 @@ function FemaleShopifyComponent({productsData}) {
   useEffect(() => {
     setGlobalCart(cartItems);
   }, [cartItems]);
-  
+
   const decItem = (item, index) => {
     if (item.itemCount > 1) {
       const counters = [...cartData];
@@ -224,14 +226,6 @@ function FemaleShopifyComponent({productsData}) {
 
   return (
     <>
-      <Head>
-        <title>Female – Traya</title>
-        <meta name="title" content="Female"></meta>
-        <meta
-          name="description"
-          content="Wondering how to stop hair loss? At Traya Health, we use the approach of Ayurveda, Dermatology and Nutrition to provide doctor Recommended hair fall solutions. Find the root cause of your hair loss now."
-        ></meta>
-      </Head>
       <DynamicHeader
         showSidebar={showSidebar}
         setShowSidebar={(val) => setShowSidebar(val)}
