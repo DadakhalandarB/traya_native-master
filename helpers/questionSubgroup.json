@@ -1,0 +1,63 @@
+[
+	{
+		"id": "describe_dandruff",
+		"has": ["Anti-Dandruff"]
+	},
+	{
+		"id": "suffering_from_dandruff",
+		"only": ["Anti-Dandruff"]
+	},
+	{
+		"id": "currently_using_for_dandruff",
+		"only": ["Anti-Dandruff"]
+	},
+	{
+		"id": "hairfall_description",
+		"has": ["Anti-Hairfall"]
+	},
+	{
+		"id": "family_history",
+		"has": ["Anti-Hairfall"]
+	},
+	{
+		"id": "hari_damage_description",
+		"has": ["Hair Damage"]
+	},
+	{
+		"id": "any_chemical_treatment",
+		"has": ["Hair Damage"],
+		"max_length": 2
+	},
+	{
+		"id": "hair_thickness",
+		"has": ["More Volume"]
+	},
+	{
+		"id": "strads_lost",
+		"has": ["More Length", "More Volume"]
+	},
+	{
+		"id": "hair_length",
+		"has": ["More Length"]
+	},
+	{
+		"id": "hair_color_duration",
+		"has": ["Hair Greying", "Hair Damage"]
+	},
+	{
+		"id": "4m",
+		"has": ["Anti-Hairfall", "More Volume"]
+	},
+	{
+		"id": "suffering_from_conditions",
+		"has": ["Anti-Hairfall", "More Volume", "Hair Greying"]
+	},
+	{
+		"id": "4k",
+		"all": true
+	},
+	{
+		"id": "4j",
+		"all": true
+	}
+]

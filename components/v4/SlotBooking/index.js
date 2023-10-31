@@ -1,0 +1,1 @@
+export { SlotBooking } from "./SlotBooking";

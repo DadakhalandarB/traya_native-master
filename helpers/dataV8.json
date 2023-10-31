@@ -1,0 +1,1898 @@
+{
+	"questions": [
+		{
+			"id": "first_name",
+			"component": "inputName",
+			"group": "basic_information",
+			"next": "phone_number",
+			"reply": "",
+			"tag": "user",
+			"text": "Before we start, can we get your name?",
+			"type": "text"
+		},
+		{
+			"id": "phone_number",
+			"component": "InputPhoneNumberV2",
+			"group": "basic_information",
+			"next": "C1d",
+			"reply": "",
+			"sub_text": "",
+			"tag": "user",
+			"text": "Phone Number",
+			"type": "tel"
+		},
+		{
+			"id": "email",
+			"component": "inputEmail",
+			"group": "basic_information",
+			"next": "C1d",
+			"reply": "",
+			"tag": "user",
+			"text": "Email",
+			"type": "text"
+		},
+		{
+			"id": "C1d",
+			"component": "inputAge",
+			"group": "basic_information",
+			"next": "gender",
+			"reply": "",
+			"tag": "form",
+			"text": "How old are you?",
+			"type": "tel"
+		},
+		{
+			"id": "gender",
+			"component": "inputRadioV4",
+			"group": "basic_information",
+			"next": "male-branch",
+			"reply": "",
+			"tag": "user",
+			"text": "Gender",
+			"type": "single_choice",
+			"optionMap": [
+				{
+					"name": "Male",
+					"value": "M"
+				},
+				{
+					"name": "Female",
+					"value": "F"
+				}
+			],
+			"fn": {
+				"if": [
+					{
+						"==": [
+							{
+								"var": "reply"
+							},
+							"M"
+						]
+					},
+					"male-branch",
+					"hair_type"
+				]
+			}
+		},
+		{
+			"id": "male-branch",
+			"component": "inputRadioV4",
+			"group": "hair_assessment",
+			"next": "3i",
+			"reply": "",
+			"tag": "form",
+			"text": "Do you have dandruff?",
+			"type": "single_choice",
+			"optionMap": [
+				{
+					"name": "No",
+					"value": "No"
+				},
+				{
+					"name": "Yes, mild that comes and goes",
+					"value": "Yes, mild that comes and goes"
+				},
+				{
+					"name": "Yes, heavy dandruff that sticks to the scalp",
+					"value": "Yes, heavy dandruff that sticks to the scalp"
+				},
+				{
+					"name": "I have Psoriasis",
+					"value": "I have Psoriasis"
+				},
+				{
+					"name": "I have Seborrheic Dermatitis",
+					"value": "I have Seborrheic Dermatitis"
+				}
+			]
+		},
+		{
+			"id": "2c",
+			"component": "inputRadioV4",
+			"group": "hair_assessment",
+			"next": "2e",
+			"reply": "",
+			"tag": "form",
+			"text": "Family history of Hair loss",
+			"type": "single_choice",
+			"optionMap": [
+				{
+					"name": "Mother or anyone from mother's side of the family",
+					"value": "Mother or anyone from mother's side of the family"
+				},
+				{
+					"name": "Father or anyone from father's side of the family",
+					"value": "Father or anyone from father's side of the family"
+				},
+				{
+					"name": "Both",
+					"value": "Both"
+				},
+				{
+					"name": "None",
+					"value": "None"
+				}
+			]
+		},
+		{
+			"id": "2e",
+			"component": "inputRadioV4",
+			"group": "hair_assessment",
+			"next": "male_experiance",
+			"reply": "",
+			"showImages": true,
+			"tag": "form",
+			"text": "Which image best describes your hair loss?",
+			"type": "single_choice",
+			"optionMap": [
+				{
+					"name": "Stage-1",
+					"value": "Stage-1",
+					"id": "Stage-1",
+					"image_url": "male/stage1.svg"
+				},
+				{
+					"name": "Stage-2",
+					"value": "Stage-2",
+					"id": "Stage-2",
+					"image_url": "male/stage2.svg"
+				},
+				{
+					"name": "Stage-3",
+					"value": "Stage-3",
+					"id": "Stage-3",
+					"image_url": "male/stage3.svg"
+				},
+				{
+					"name": "Stage-4",
+					"value": "Stage-4",
+					"id": "Stage-4",
+					"image_url": "male/stage4.svg"
+				},
+				{
+					"name": "Stage-5",
+					"value": "Stage-5",
+					"id": "Stage-5",
+					"image_url": "male/stage5.svg"
+				},
+				{
+					"name": "Stage-6",
+					"value": "Stage-6",
+					"id": "Stage-6",
+					"image_url": "male/stage6.svg"
+				},
+				{
+					"name": "Coin Size Patch",
+					"value": "Coin Size Patch",
+					"id": "Stage-7",
+					"image_url": "male/coin-size.svg"
+				},
+				{
+					"name": "Heavy Hair Fall Across The Head",
+					"value": "Heavy Hair Fall Across The Head",
+					"id": "Stage-8",
+					"image_url": "male/hair-fall.svg"
+				}
+			]
+		},
+		{
+			"id": "male_experiance",
+			"component": "inputCheckbox",
+			"group": "hair_assessment",
+			"next": "3b",
+			"reply": "",
+			"tag": "form",
+			"text": "Have you experienced any of the below in the last 1 year?",
+			"type": "multiple_choice",
+			"optionMap": [
+				{
+					"name": "None",
+					"value": "None"
+				},
+				{
+					"name": "Severe Illness (Dengue, Malaria, Typhoid or Covid)",
+					"value": "Severe Illness (Dengue, Malaria, Typhoid or Covid)"
+				},
+				{
+					"name": "Heavy weight loss / heavy weight gain",
+					"value": "Heavy weight loss / heavy weight gain"
+				},
+				{
+					"name": "Surgery / heavy medication",
+					"value": "Surgery / heavy medication"
+				}
+			]
+		},
+		{
+			"id": "hair_fall_treatment",
+			"component": "inputCheckbox",
+			"group": "hair_assessment",
+			"next": "3b",
+			"reply": "",
+			"tag": "form",
+			"text": "Have you taken any of the below treatment for hair fall?",
+			"type": "multiple_choice",
+			"optionMap": [
+				{
+					"name": "None",
+					"value": "None"
+				},
+				{
+					"name": "Hair transplant",
+					"value": "Hair transplant"
+				},
+				{
+					"name": "PRP treatment",
+					"value": "PRP treatment"
+				},
+				{
+					"name": "Minoxidil",
+					"value": "Minoxidil"
+				},
+				{
+					"name": "Other Medications",
+					"value": "Other Medications"
+				}
+			]
+		},
+		{
+			"id": "hair_transplant",
+			"component": "inputRadioV4",
+			"group": "lifestyle_questions",
+			"next": "3b",
+			"reply": "",
+			"tag": "form",
+			"text": "When was the transplant done?",
+			"type": "single_choice",
+			"optionMap": [
+				{
+					"name": "Recently",
+					"value": "Recently"
+				},
+				{
+					"name": "6 months to 1 year",
+					"value": "6 months to 1 year"
+				},
+				{
+					"name": "More than a year",
+					"value": "More than a year"
+				}
+			]
+		},
+		{
+			"id": "minoxidile_serum",
+			"component": "inputRadioV4",
+			"group": "lifestyle_questions",
+			"next": "minoxidile_issue",
+			"reply": "",
+			"tag": "form",
+			"text": "How long did you use Minoxidil serum for?",
+			"type": "single_choice",
+			"optionMap": [
+				{
+					"name": "Less than 1 month",
+					"value": "Less than 1 month"
+				},
+				{
+					"name": "1 to 6 months",
+					"value": "1 to 6 months"
+				},
+				{
+					"name": "more than 6 months",
+					"value": "more than 6 months"
+				}
+			]
+		},
+		{
+			"id": "minoxidile_issue",
+			"component": "inputRadioV4",
+			"group": "lifestyle_questions",
+			"next": "3b",
+			"reply": "",
+			"tag": "form",
+			"text": "Did you face any issue with using Minoxidil?",
+			"type": "single_choice",
+			"optionMap": [
+				{
+					"name": "Yes",
+					"value": "Yes"
+				},
+				{
+					"name": "No",
+					"value": "No"
+				}
+			]
+		},
+		{
+			"id": "other_medications",
+			"component": "UserFeedback",
+			"group": "lifestyle_questions",
+			"next": "3b",
+			"reply": "",
+			"tag": "user",
+			"text": "Please share if possible what have you used before, this will help our doctors plan your treatment better",
+			"type": "text"
+		},
+		{
+			"id": "3b",
+			"component": "inputRadioV4",
+			"group": "lifestyle_questions",
+			"next": "3c",
+			"reply": "",
+			"tag": "form",
+			"text": "How energetic do you feel?",
+			"type": "single_choice",
+			"optionMap": [
+				{
+					"name": "Always high",
+					"value": "Always high"
+				},
+				{
+					"name": "Low when I wake up, but gradually increases",
+					"value": "Low when I wake up, but gradually increases"
+				},
+				{
+					"name": "Very low in afternoon",
+					"value": "Very low in afternoon"
+				},
+				{
+					"name": "Low by evening/night",
+					"value": "Low by evening/night"
+				},
+				{
+					"name": "Always low",
+					"value": "Always low"
+				}
+			]
+		},
+		{
+			"id": "3c",
+			"component": "inputRadioV4",
+			"group": "lifestyle_questions",
+			"next": "3d",
+			"reply": "",
+			"tag": "form",
+			"text": "Do you feel constipated?",
+			"type": "single_choice",
+			"optionMap": [
+				{
+					"name": "No/Rarely",
+					"value": "No/Rarely"
+				},
+				{
+					"name": "Yes",
+					"value": "Yes"
+				},
+				{
+					"name": "Unsatisfactory bowel movements",
+					"value": "Unsatisfactory bowel movements"
+				},
+				{
+					"name": "Suffering from IBS (irritable bowel syndrome) /dysentery",
+					"value": "Suffering from IBS (irritable bowel syndrome) /dysentery"
+				}
+			],
+			"fn": {
+				"if": [
+					{
+						"==": [
+							{
+								"var": "reply"
+							},
+							"No/Rarely"
+						]
+					},
+					"3di",
+					"3d"
+				]
+			}
+		},
+		{
+			"id": "3di",
+			"component": "inputRadio",
+			"group": "lifestyle_questions",
+			"next": "3d",
+			"reply": "",
+			"tag": "form",
+			"text": "Do you have Gas, Acidity or Bloating?",
+			"type": "single_choice",
+			"optionMap": [
+				{
+					"name": "Yes",
+					"value": "Yes"
+				},
+				{
+					"name": "No",
+					"value": "No"
+				}
+			]
+		},
+		{
+			"id": "3d",
+			"component": "inputRadioV4",
+			"group": "lifestyle_questions",
+			"next": "3e",
+			"reply": "",
+			"tag": "form",
+			"text": "How stressed are you?",
+			"type": "single_choice",
+			"optionMap": [
+				{
+					"name": "None",
+					"value": "None"
+				},
+				{
+					"name": "Low",
+					"value": "Low"
+				},
+				{
+					"name": "Moderate(work, family etc )",
+					"value": "Moderate(work, family etc )"
+				},
+				{
+					"name": "High (Loss of close one, separation, home, illness)",
+					"value": "High (Loss of close one, separation, home, illness)"
+				}
+			]
+		},
+		{
+			"id": "3e",
+			"component": "inputRadioV4",
+			"group": "lifestyle_questions",
+			"next": "3f",
+			"reply": "",
+			"tag": "form",
+			"text": "How well do you sleep?",
+			"type": "single_choice",
+			"optionMap": [
+				{
+					"name": "Very peacefully for 6 to 8 hours",
+					"value": "Very peacefully for 6 to 8 hours"
+				},
+				{
+					"name": "Disturbed sleep, I wake up at least one time during the night",
+					"value": "Disturbed sleep, I wake up at least one time during the night"
+				},
+				{
+					"name": "Have difficulty falling asleep",
+					"value": "Have difficulty falling asleep"
+				}
+			]
+		},
+		{
+			"id": "3f",
+			"component": "inputRadioV4",
+			"group": "lifestyle_questions",
+			"next": "3j",
+			"reply": "",
+			"tag": "form",
+			"text": "Okay, what about other problems like Thyroid imbalance, Vitamin D3, Vitamin B12 deficiencies, Lipids etc.",
+			"type": "single_choice",
+			"optionMap": [
+				{
+					"name": "Yes",
+					"value": "Yes",
+					"id": "Answer 1"
+				},
+				{
+					"name": "No",
+					"value": "No",
+					"id": "Answer 2"
+				},
+				{
+					"name": "Not Sure",
+					"value": "Not Sure",
+					"id": "Answer 3"
+				}
+			]
+		},
+		{
+			"id": "3i",
+			"component": "inputCheckboxV4",
+			"group": "hair_assessment",
+			"next": "2c",
+			"reply": "",
+			"sub_text": "Choose as many as you like",
+			"tag": "form",
+			"text": "What are your major hair goals?",
+			"type": "multiple_choice",
+			"optionMap": [
+				{
+					"name": "Regrow hair",
+					"value": "Regrow hair"
+				},
+				{
+					"name": "Control hair fall",
+					"value": "Control hair fall"
+				},
+				{
+					"name": "I have a good set of hair, I want to maintain it.",
+					"value": "I have a good set of hair, I want to maintain it."
+				},
+				{
+					"name": "Work on hair quality",
+					"value": "Work on hair quality"
+				},
+				{
+					"name": "Delay greying",
+					"value": "Delay greying"
+				}
+			]
+		},
+		{
+			"id": "3j",
+			"component": "inputRadioV4",
+			"group": "lifestyle_questions",
+			"next": "photo_q",
+			"reply": "",
+			"tag": "form",
+			"text": "Do you have Blood Pressure problem?",
+			"type": "single_choice",
+			"optionMap": [
+				{
+					"name": "None",
+					"value": "None"
+				},
+				{
+					"name": "Yes, high BP issue",
+					"value": "Yes, high BP issue"
+				},
+				{
+					"name": "Yes, low BP issue",
+					"value": "Yes, low BP issue"
+				}
+			]
+		},
+		{
+			"id": "hair_goals",
+			"component": "inputCheckbox",
+			"group": "know_your_hair",
+			"max": 3,
+			"next": "describe_dandruff",
+			"reply": "",
+			"sub_text": "Choose upto three goals",
+			"tag": "form",
+			"text": "Hair Goals",
+			"type": "multiple_choice",
+			"optionMap": [
+				{
+					"name": "Anti-Hairfall",
+					"value": "Anti-Hairfall"
+				},
+				{
+					"name": "Anti-Dandruff",
+					"value": "Anti-Dandruff"
+				},
+				{
+					"name": "More Volume",
+					"value": "More Volume"
+				},
+				{
+					"name": "More Length",
+					"value": "More Length"
+				},
+				{
+					"name": "Hair Greying",
+					"value": "Hair Greying"
+				},
+				{
+					"name": "Overall Health",
+					"value": "Overall Health"
+				},
+				{
+					"name": "Hair Damage",
+					"value": "Hair Damage"
+				}
+			]
+		},
+		{
+			"id": "suffering_from_dandruff",
+			"component": "inputRadio",
+			"group": "know_your_hair",
+			"checkSubgroup": true,
+			"next": "currently_using_for_dandruff",
+			"reply": "",
+			"tag": "form",
+			"text": "How long have you been suffering from dandruff?",
+			"type": "single_choice",
+			"optionMap": [
+				{
+					"name": "It's seasonal comes and goes",
+					"value": "It's seasonal comes and goes"
+				},
+				{
+					"name": "For the last 2-3 years",
+					"value": "For the last 2-3 years"
+				},
+				{
+					"name": "For more than 3 years",
+					"value": "For more than 3 years"
+				},
+				{
+					"name": "I have a scalp condition",
+					"value": "I have a scalp condition"
+				}
+			]
+		},
+		{
+			"id": "currently_using_for_dandruff",
+			"component": "inputRadio",
+			"group": "know_your_hair",
+			"checkSubgroup": true,
+			"next": "hairfall_description",
+			"reply": "",
+			"tag": "form",
+			"text": "What are you currently using for your dandruff?",
+			"type": "single_choice",
+			"optionMap": [
+				{
+					"name": "Home remedies like lemon, curd and neem",
+					"value": "Home remedies like lemon, curd and neem"
+				},
+				{
+					"name": "Medicated shampoo with Salicylic acid, Ketoconazole, Zinc Pythrione",
+					"value": "Medicated shampoo with Salicylic acid, Ketoconazole, Zinc Pythrione"
+				},
+				{
+					"name": "Anti-dandruff shampoo from popular brands",
+					"value": "Anti-dandruff shampoo from popular brands"
+				},
+				{
+					"name": "Regular shampoo",
+					"value": "Regular shampoo"
+				}
+			]
+		},
+		{
+			"id": "hairfall_description",
+			"component": "inputRadio",
+			"group": "know_your_hair",
+			"checkSubgroup": true,
+			"next": "family_history",
+			"reply": "",
+			"showImages": true,
+			"tag": "form",
+			"text": "Describe your hair fall",
+			"type": "single_choice",
+			"optionMap": [
+				{
+					"name": "Heavy hairfall",
+					"value": "Heavy hairfall",
+					"image_url": "female-hair-fall-describe/heavy-hair-fall.svg"
+				},
+				{
+					"name": "Thinner hair throughout",
+					"value": "Thinner hair throughout",
+					"image_url": "female-hair-fall-describe/thinner-hair-throughout.svg"
+				},
+				{
+					"name": "Hair breakage",
+					"value": "Hair breakage",
+					"image_url": "female-hair-fall-describe/hair-brekage.svg"
+				},
+				{
+					"name": "Widened partition",
+					"value": "Widened partition",
+					"image_url": "female-hair-fall-describe/widened-partition.svg"
+				},
+				{
+					"name": "Coin sized patches",
+					"value": "Coin sized patches",
+					"image_url": "female-hair-fall-describe/coin-sized-patches.svg"
+				}
+			]
+		},
+		{
+			"id": "family_history",
+			"component": "inputRadio",
+			"group": "know_your_hair",
+			"checkSubgroup": true,
+			"next": "hair_damage_description",
+			"reply": "",
+			"tag": "form",
+			"text": "Is hair loss in your family history?",
+			"type": "single_choice",
+			"optionMap": [
+				{
+					"name": "Yes, Mother or mother's side of the family",
+					"value": "Yes, Mother or mother's side of the family"
+				},
+				{
+					"name": "Yes, Father or father's side of the family",
+					"value": "Yes, Father or father's side of the family"
+				},
+				{
+					"name": "Both",
+					"value": "Both"
+				},
+				{
+					"name": "None",
+					"value": "None"
+				}
+			]
+		},
+		{
+			"id": "hair_damage_description",
+			"component": "inputRadio",
+			"group": "know_your_hair",
+			"checkSubgroup": true,
+			"next": "any_chemical_treatment",
+			"reply": "",
+			"tag": "form",
+			"text": "Describe your hair damage",
+			"type": "single_choice",
+			"optionMap": [
+				{
+					"name": "Dull hair",
+					"value": "Dull hair"
+				},
+				{
+					"name": "Split ends",
+					"value": "Split ends"
+				},
+				{
+					"name": "Frizzy hair",
+					"value": "Frizzy hair"
+				},
+				{
+					"name": "Tangles easily with knots",
+					"value": "Tangles easily with knots"
+				}
+			]
+		},
+		{
+			"id": "any_chemical_treatment",
+			"component": "inputRadio",
+			"group": "know_your_hair",
+			"checkSubgroup": true,
+			"next": "hair_thickness",
+			"reply": "",
+			"tag": "form",
+			"text": "Did you go through any chemical treatment recently?",
+			"type": "single_choice",
+			"optionMap": [
+				{
+					"name": "Yes, hair coloring",
+					"value": "Yes, hair coloring"
+				},
+				{
+					"name": "Yes, keratin treatment",
+					"value": "Yes, keratin treatment"
+				},
+				{
+					"name": "Yes, bond treatments",
+					"value": "Yes, bond treatments"
+				},
+				{
+					"name": "No treatments",
+					"value": "No treatments"
+				},
+				{
+					"name": "Other treatments",
+					"value": "Other treatments"
+				}
+			]
+		},
+		{
+			"id": "hair_thickness",
+			"component": "inputRadio",
+			"group": "know_your_hair",
+			"checkSubgroup": true,
+			"next": "strads_lost",
+			"reply": "",
+			"tag": "form",
+			"text": "How thick is each strand of your hair",
+			"type": "single_choice",
+			"optionMap": [
+				{
+					"name": "Thin",
+					"value": "Thin"
+				},
+				{
+					"name": "Medium",
+					"value": "Medium"
+				},
+				{
+					"name": "Thick",
+					"value": "Thick"
+				}
+			]
+		},
+		{
+			"id": "strads_lost",
+			"component": "inputRadio",
+			"group": "know_your_hair",
+			"checkSubgroup": true,
+			"next": "hair_length",
+			"reply": "",
+			"tag": "form",
+			"text": "How many strands do you lose in a day?",
+			"type": "single_choice",
+			"optionMap": [
+				{
+					"name": "50-100 strands",
+					"value": "50-100 strands"
+				},
+				{
+					"name": "100-150 strands",
+					"value": "100-150 strands"
+				},
+				{
+					"name": "More than 150 strands",
+					"value": "More than 150 strands"
+				}
+			]
+		},
+		{
+			"id": "hair_length",
+			"component": "inputRadio",
+			"group": "know_your_hair",
+			"checkSubgroup": true,
+			"next": "hair_color_duration",
+			"reply": "",
+			"tag": "form",
+			"text": "What is the current length of your hair?",
+			"type": "single_choice",
+			"optionMap": [
+				{
+					"name": "Ear length",
+					"value": "Ear length"
+				},
+				{
+					"name": "Shoulder length",
+					"value": "Shoulder length"
+				},
+				{
+					"name": "Waist length",
+					"value": "Waist length"
+				},
+				{
+					"name": "Longer",
+					"value": "Longer"
+				}
+			]
+		},
+		{
+			"id": "hair_color_duration",
+			"component": "inputRadio",
+			"group": "know_your_hair",
+			"checkSubgroup": true,
+			"next": "4m",
+			"reply": "",
+			"tag": "form",
+			"text": "Do you often color your hair?",
+			"type": "single_choice",
+			"optionMap": [
+				{
+					"name": "Every 3 months",
+					"value": "Every 3 months"
+				},
+				{
+					"name": "Twice a year",
+					"value": "Twice a year"
+				},
+				{
+					"name": "Once a year",
+					"value": "Once a year"
+				},
+				{
+					"name": "Never",
+					"value": "Never"
+				}
+			]
+		},
+		{
+			"id": "4m",
+			"component": "inputRadio",
+			"group": "lifestyle_questions",
+			"checkSubgroup": true,
+			"next": "suffering_from_conditions",
+			"reply": "",
+			"tag": "form",
+			"text": "Are you going through any of these stages?",
+			"type": "single_choice",
+			"optionMap": [
+				{
+					"name": "Pregnancy",
+					"value": "Pregnancy"
+				},
+				{
+					"name": "Post-pregnancy",
+					"value": "Post-pregnancy"
+				},
+				{
+					"name": "Menopause",
+					"value": "Menopause"
+				},
+				{
+					"name": "Post-Covid",
+					"value": "Post-Covid"
+				},
+				{
+					"name": "None",
+					"value": "None"
+				}
+			],
+			"fn": {
+				"if": [
+					{
+						"==": [
+							{
+								"var": "reply"
+							},
+							"Post-pregnancy"
+						]
+					},
+					"4ma",
+					"suffering_from_conditions"
+				]
+			}
+		},
+		{
+			"id": "4ma",
+			"component": "inputRadio",
+			"group": "lifestyle_questions",
+			"next": "suffering_from_conditions",
+			"reply": "",
+			"type": "single_choice",
+			"tag": "form",
+			"text": "Are you breastfeeding?",
+			"optionMap": [
+				{
+					"name": "Yes",
+					"value": "Yes"
+				},
+				{
+					"name": "No",
+					"value": "No"
+				}
+			]
+		},
+		{
+			"id": "suffering_from_conditions",
+			"component": "inputCheckbox",
+			"group": "lifestyle_questions",
+			"checkSubgroup": true,
+			"next": "4k",
+			"reply": "",
+			"tag": "form",
+			"text": "Are you suffering from any of these conditions?",
+			"type": "multiple_choice",
+			"optionMap": [
+				{
+					"name": "Irregular periods (Pcos)",
+					"value": "Irregular periods (Pcos)"
+				},
+				{
+					"name": "Anaemia",
+					"value": "Anaemia"
+				},
+				{
+					"name": "Thyroid",
+					"value": "Thyroid"
+				},
+				{
+					"name": "Vitamin/ Other deficiency",
+					"value": "Vitamin/ Other deficiency"
+				},
+				{
+					"name": "Hormonal imbalance",
+					"value": "Hormonal imbalance"
+				},
+				{
+					"name": "None",
+					"value": "None"
+				}
+			]
+		},
+		{
+			"id": "4k",
+			"component": "inputRadio",
+			"group": "lifestyle_questions",
+			"checkSubgroup": true,
+			"next": "4j",
+			"reply": "",
+			"tag": "form",
+			"text": "How well do you sleep?",
+			"type": "single_choice",
+			"optionMap": [
+				{
+					"name": "Peacefully for 6-8 hours",
+					"value": "Peacefully for 6-8 hours"
+				},
+				{
+					"name": "Disturbed sleep, I wake up atleast once a night",
+					"value": "Disturbed sleep, I wake up atleast once a night"
+				},
+				{
+					"name": "Have difficulty falling asleep",
+					"value": "Have difficulty falling asleep"
+				}
+			]
+		},
+		{
+			"id": "4j",
+			"component": "inputRadio",
+			"group": "lifestyle_questions",
+			"checkSubgroup": true,
+			"next": "gut_problems",
+			"reply": "",
+			"tag": "form",
+			"text": "How stressed are you?",
+			"type": "single_choice",
+			"optionMap": [
+				{
+					"name": "Not at all",
+					"value": "Not at all"
+				},
+				{
+					"name": "Low",
+					"value": "Low"
+				},
+				{
+					"name": "Moderate",
+					"value": "Moderate"
+				},
+				{
+					"name": "High",
+					"value": "High"
+				}
+			]
+		},
+		{
+			"id": "gut_problems",
+			"component": "inputRadio",
+			"group": "lifestyle_questions",
+			"next": "4h",
+			"reply": "",
+			"tag": "form",
+			"text": "Do you have any gut problems?",
+			"type": "single_choice",
+			"optionMap": [
+				{
+					"name": "None",
+					"value": "None"
+				},
+				{
+					"name": "Acidity",
+					"value": "Acidity"
+				},
+				{
+					"name": "Indigestion",
+					"value": "Indigestion"
+				},
+				{
+					"name": "Constipation",
+					"value": "Constipation"
+				},
+				{
+					"name": "IBS",
+					"value": "IBS"
+				},
+				{
+					"name": "Stomach pain or discomfort",
+					"value": "Stomach pain or discomfort"
+				},
+				{
+					"name": "Bloating and Gas",
+					"value": "Bloating and Gas"
+				}
+			],
+			"fn": {
+				"if": [
+					{
+						"==": [
+							{
+								"var": "reply"
+							},
+							"None"
+						]
+					},
+					"photo_q",
+					"4h"
+				]
+			}
+		},
+		{
+			"id": "4h",
+			"component": "inputRadioV4",
+			"group": "lifestyle_questions",
+			"next": "photo_q",
+			"reply": "",
+			"tag": "form",
+			"text": "Describe your energy levels",
+			"type": "single_choice",
+			"optionMap": [
+				{
+					"name": "Low when I wake up, but gradually increases",
+					"value": "Low when I wake up, but gradually increases"
+				},
+				{
+					"name": "Very low in afternoon",
+					"value": "Very low in afternoon"
+				},
+				{
+					"name": "Low by evening/night",
+					"value": "Low by evening/night"
+				},
+				{
+					"name": "Always low",
+					"value": "Always low"
+				}
+			]
+		},
+		{
+			"id": "4q",
+			"component": "inputSlotsV4",
+			"group": "scalp_photo",
+			"next": "photo_q",
+			"reply": "",
+			"slots": "GET_SLOTS_API",
+			"type": "single_choice",
+			"tag": "form",
+			"text": "Would you like to book a free appointment with our hair expert?",
+			"optionMap": [
+				{
+					"name": "Yes",
+					"value": "Yes",
+					"id": "4q_option1"
+				},
+				{
+					"name": "I'll do this later",
+					"value": "I'll do this later",
+					"id": "4q_option2"
+				}
+			]
+		},
+		{
+			"id": "hair_type",
+			"component": "inputRadioV4",
+			"group": "know_your_hair",
+			"next": "hair_quality",
+			"reply": "",
+			"tag": "form",
+			"text": "What does your hair look like naturally?",
+			"type": "single_choice",
+			"optionMap": [
+				{
+					"name": "Straight",
+					"value": "Straight"
+				},
+				{
+					"name": "Wavy",
+					"value": "Wavy"
+				},
+				{
+					"name": "Curly",
+					"value": "Curly"
+				},
+				{
+					"name": "Coily",
+					"value": "Coily"
+				}
+			]
+		},
+		{
+			"id": "hair_quality",
+			"component": "inputRadioV4",
+			"group": "know_your_hair",
+			"next": "feel_hair_fall",
+			"reply": "",
+			"tag": "form",
+			"text": "Describe your hair quality",
+			"type": "single_choice",
+			"optionMap": [
+				{
+					"name": "Good Hair Quality",
+					"value": "Good Hair Quality"
+				},
+				{
+					"name": "Damaged Hair",
+					"value": "Damaged Hair"
+				}
+			],
+			"fn": {
+				"if": [
+					{
+						"==": [
+							{
+								"var": "reply"
+							},
+							"Damaged Hair"
+						]
+					},
+					"hair_quality1",
+					"feel_hair_fall"
+				]
+			}
+		},
+		{
+			"id": "hair_quality1",
+			"component": "inputCheckbox",
+			"group": "know_your_hair",
+			"next": "feel_hair_fall",
+			"reply": "",
+			"tag": "form",
+			"text": "How would you describe your hair damage?",
+			"type": "multiple_choice",
+			"optionMap": [
+				{
+					"name": "Dull hair",
+					"value": "Dull hair"
+				},
+				{
+					"name": "Split ends",
+					"value": "Split ends"
+				},
+				{
+					"name": "Frizzy hair",
+					"value": "Frizzy hair"
+				},
+				{
+					"name": "Tangles easily with knots",
+					"value": "Tangles easily with knots"
+				},
+				{
+					"name": "None",
+					"value": "None"
+				}
+			]
+		},
+		{
+			"id": "hair_vol",
+			"component": "inputRadioV4",
+			"group": "know_your_hair",
+			"next": "hair_feel",
+			"reply": "",
+			"tag": "form",
+			"text": "How dense is your hair?",
+			"type": "single_choice",
+			"optionMap": [
+				{
+					"name": "Very dense",
+					"value": "Very dense"
+				},
+				{
+					"name": "Medium volume",
+					"value": "Medium volume"
+				},
+				{
+					"name": "Low volume",
+					"value": "Low volume"
+				}
+			],
+			"fn": {
+				"if": [
+					{
+						"!==": [
+							{
+								"var": "reply"
+							},
+							"Very dense"
+						]
+					},
+					"hair_vol1",
+					"hair_feel"
+				]
+			}
+		},
+		{
+			"id": "hair_vol1",
+			"component": "inputRadio",
+			"group": "know_your_hair",
+			"next": "hair_feel",
+			"checkSubgroup": true,
+			"showImages": true,
+			"reply": "",
+			"tag": "form",
+			"text": "Where do you stand?",
+			"type": "single_choice",
+			"optionMap": [
+				{
+					"name": "No widening",
+					"value": "No widening",
+					"image_url": "female-hair-fall-describe/stage1.png"
+				},
+				{
+					"name": "Starting to see widening",
+					"value": "Starting to see widening",
+					"image_url": "female-hair-fall-describe/medWide.jpg"
+				},
+				{
+					"name": "Medium Widening",
+					"value": "Medium Widening",
+					"image_url": "female-hair-fall-describe/stage2.jpg"
+				},
+				{
+					"name": "Advanced widening",
+					"value": "Advanced widening",
+					"image_url": "female-hair-fall-describe/stage3.jpg"
+				},
+				{
+					"name": "Coin Size Patches",
+					"value": "Coin Size Patches",
+					"image_url": "female-hair-fall-describe/stage4.jpg"
+				}
+			]
+		},
+		{
+			"id": "hair_feel",
+			"component": "inputRadioV4",
+			"group": "know_your_hair",
+			"next": "fhf2",
+			"reply": "",
+			"tag": "form",
+			"text": "What does a single strand of your hair feel like?",
+			"type": "single_choice",
+			"optionMap": [
+				{
+					"name": "Thin",
+					"value": "Thin"
+				},
+				{
+					"name": "Medium",
+					"value": "Medium"
+				},
+				{
+					"name": "Thick",
+					"value": "Thick"
+				}
+			]
+		},
+		{
+			"id": "feel_hair_fall",
+			"component": "inputRadioV4",
+			"group": "know_your_hair",
+			"next": "hair_vol1",
+			"reply": "",
+			"tag": "form",
+			"text": "Do you feel like you're facing Hair Fall more than usual?",
+			"type": "single_choice",
+			"optionMap": [
+				{
+					"name": "Yes, extreme hair fall",
+					"value": "Yes, extreme hair fall"
+				},
+				{
+					"name": "Mild hair fall",
+					"value": "Mild hair fall"
+				},
+				{
+					"name": "No Hair fall",
+					"value": "No Hair fall"
+				}
+			]
+		},
+		{
+			"id": "fhf1",
+			"component": "inputRadioV4",
+			"group": "know_your_hair",
+			"next": "feel_oily",
+			"reply": "",
+			"tag": "form",
+			"text": "How many strands do you lose in a day?",
+			"type": "single_choice",
+			"optionMap": [
+				{
+					"name": "50 - 100 strands",
+					"value": "50 - 100 strands"
+				},
+				{
+					"name": "100 - 150 strands",
+					"value": "100 - 150 strands"
+				},
+				{
+					"name": "More than 150 strands",
+					"value": "More than 150 strands"
+				}
+			],
+			"fn": {
+				"if": [
+					{
+						"!==": [
+							{
+								"var": "reply"
+							},
+							"More than 150 stands"
+						]
+					},
+					"fhf2",
+					"feel_oily"
+				]
+			}
+		},
+		{
+			"id": "fhf2",
+			"component": "inputRadio",
+			"group": "know_your_hair",
+			"next": "feel_oily",
+			"reply": "",
+			"tag": "form",
+			"text": "Is hair loss a genetic issue in your family?",
+			"type": "single_choice",
+			"optionMap": [
+				{
+					"name": "Yes, Mother or mother's side of family",
+					"value": "Yes, Mother or mother's side of family"
+				},
+				{
+					"name": "Yes, Father or father's side of family",
+					"value": "Yes, Father or father's side of family"
+				},
+				{
+					"name": "Both",
+					"value": "Both"
+				},
+				{
+					"name": "None",
+					"value": "None"
+				}
+			]
+		},
+		{
+			"id": "feel_oily",
+			"component": "inputRadioV4",
+			"group": "know_your_hair",
+			"next": "describe_dandruff",
+			"reply": "",
+			"tag": "form",
+			"text": "How long after hair wash does your hair start to feel oily?",
+			"type": "single_choice",
+			"optionMap": [
+				{
+					"name": "Within 24 hours",
+					"value": "Within 24 hours"
+				},
+				{
+					"name": "2-3 days",
+					"value": "2-3 days"
+				},
+				{
+					"name": "More than 4 days",
+					"value": "More than 4 days"
+				}
+			]
+		},
+		{
+			"id": "describe_dandruff",
+			"component": "inputRadioV4",
+			"group": "know_your_hair",
+			"next": "female_stage",
+			"reply": "",
+			"tag": "form",
+			"text": "Describe your dandruff.",
+			"type": "single_choice",
+			"optionMap": [
+				{
+					"name": "No",
+					"value": "No"
+				},
+				{
+					"name": "Yes, Mild that comes & goes",
+					"value": "Yes, Mild that comes & goes"
+				},
+				{
+					"name": "Yes, Heavy dandruff that sticks to the scalp",
+					"value": "Yes, Heavy dandruff that sticks to the scalp"
+				},
+				{
+					"name": "I have Psoriasis",
+					"value": "I have Psoriasis"
+				},
+				{
+					"name": "I have Sebhoric Dermatitis",
+					"value": "I have Sebhoric Dermatitis"
+				}
+			]
+		},
+		{
+			"id": "female_stage",
+			"component": "inputRadioV4",
+			"group": "lifestyle_questions",
+			"next": "female_experiance",
+			"reply": "",
+			"tag": "form",
+			"text": "Are you going through any of these stages?",
+			"type": "single_choice",
+			"optionMap": [
+				{
+					"name": "None",
+					"value": "None"
+				},
+				{
+					"name": "Pregnancy",
+					"value": "Pregnancy"
+				},
+				{
+					"name": "Post-pregnancy",
+					"value": "Post-pregnancy"
+				},
+				{
+					"name": "Menopause",
+					"value": "Menopause"
+				}
+			],
+			"fn": {
+				"if": [
+					{
+						"==": [
+							{
+								"var": "reply"
+							},
+							"Pregnancy"
+						]
+					},
+					"fs1",
+					{
+						"==": [
+							{
+								"var": "reply"
+							},
+							"Post-pregnancy"
+						]
+					},
+					"fs2",
+					"female_experiance"
+				]
+			}
+		},
+		{
+			"id": "fs1",
+			"component": "inputRadioV4",
+			"group": "lifestyle_questions",
+			"next": "female_experiance",
+			"reply": "",
+			"tag": "form",
+			"text": "Are you taking any Prenatal Vitamins?",
+			"type": "single_choice",
+			"optionMap": [
+				{
+					"name": "Yes",
+					"value": "Yes"
+				},
+				{
+					"name": "No",
+					"value": "No"
+				}
+			]
+		},
+		{
+			"id": "fs2",
+			"component": "inputRadioV4",
+			"group": "lifestyle_questions",
+			"next": "female_experiance",
+			"reply": "",
+			"tag": "form",
+			"text": "Are you currently breast feeding?",
+			"type": "single_choice",
+			"optionMap": [
+				{
+					"name": "Yes",
+					"value": "Yes"
+				},
+				{
+					"name": "No",
+					"value": "No"
+				}
+			]
+		},
+		{
+			"id": "fs3",
+			"component": "inputRadioV4",
+			"group": "lifestyle_questions",
+			"next": "female_experiance",
+			"reply": "",
+			"tag": "form",
+			"text": "Are you facing any of this? (If menopause)",
+			"type": "single_choice",
+			"optionMap": [
+				{
+					"name": "Mood swings",
+					"value": "Mood swings"
+				},
+				{
+					"name": "Hot flashes",
+					"value": "Hot flashes"
+				},
+				{
+					"name": "Cramps",
+					"value": "Cramps"
+				},
+				{
+					"name": "None",
+					"value": "None"
+				}
+			]
+		},
+		{
+			"id": "female_experiance",
+			"component": "inputCheckbox",
+			"group": "lifestyle_questions",
+			"next": "female_cond",
+			"reply": "",
+			"tag": "form",
+			"text": "Have you experienced any of the below in last 1 year?",
+			"type": "multiple_choice",
+			"optionMap": [
+				{
+					"name": "None",
+					"value": "None"
+				},
+				{
+					"name": "Severe Illness (Dengue, Malaria, Typhoid or Covid)",
+					"value": "Severe Illness (Dengue, Malaria, Typhoid or Covid)"
+				},
+				{
+					"name": "Heavy weight loss or heavy weight gain",
+					"value": "Heavy weight loss or heavy weight gain"
+				},
+				{
+					"name": "Surgery or on heavy medication",
+					"value": "Surgery or on heavy medication"
+				}
+			]
+		},
+		{
+			"id": "female_cond",
+			"component": "inputCheckbox",
+			"group": "lifestyle_questions",
+			"next": "vitamin_def",
+			"reply": "",
+			"tag": "form",
+			"text": "Are you going through any of the below?",
+			"type": "multiple_choice",
+			"optionMap": [
+				{
+					"name": "Anemia (Low Haemoglobin)",
+					"value": "Anemia (Low Haemoglobin)"
+				},
+				{
+					"name": "Low Thyroid (Hypothyroidism)",
+					"value": "Low Thyroid (Hypothyroidism)"
+				},
+				{
+					"name": "PCOS",
+					"value": "PCOS"
+				},
+				{
+					"name": "Other Hormonal Issues",
+					"value": "Other Hormonal Issues"
+				},
+				{
+					"name": "None",
+					"value": "None"
+				}
+			]
+		},
+		{
+			"id": "vitamin_def",
+			"component": "inputRadioV4",
+			"group": "lifestyle_questions",
+			"next": "sleep_check",
+			"reply": "",
+			"tag": "form",
+			"text": "Do you have any Vitamin defeciencies that you are aware of?",
+			"type": "single_choice",
+			"optionMap": [
+				{
+					"name": "Yes",
+					"value": "Yes"
+				},
+				{
+					"name": "No",
+					"value": "No"
+				},
+				{
+					"name": "Not sure",
+					"value": "Not sure"
+				}
+			],
+			"if": [
+				{
+					"!==": [
+						{
+							"var": "reply"
+						},
+						"No"
+					]
+				},
+				"vitamin_def1",
+				"sleep_check"
+			]
+		},
+		{
+			"id": "vitamin_def1",
+			"component": "inputRadioV4",
+			"group": "lifestyle_questions",
+			"next": "sleep_check",
+			"reply": "",
+			"tag": "form",
+			"text": "Are you currently eating any vitamin tablets?",
+			"type": "single_choice",
+			"optionMap": [
+				{
+					"name": "Yes",
+					"value": "Yes"
+				},
+				{
+					"name": "No",
+					"value": "No"
+				}
+			]
+		},
+		{
+			"id": "sleep_check",
+			"component": "inputRadioV4",
+			"group": "lifestyle_questions",
+			"next": "stress_check",
+			"reply": "",
+			"tag": "form",
+			"text": "How well do you sleep",
+			"type": "single_choice",
+			"optionMap": [
+				{
+					"name": "Peacefully for 6-8 hours",
+					"value": "Peacefully for 6-8 hours"
+				},
+				{
+					"name": "Disturbed sleep, I wake up atleast once a night",
+					"value": "Disturbed sleep, I wake up atleast once a night"
+				},
+				{
+					"name": "Have difficulty falling asleep",
+					"value": "Have difficulty falling asleep"
+				}
+			]
+		},
+		{
+			"id": "stress_check",
+			"component": "inputRadioV4",
+			"group": "lifestyle_questions",
+			"next": "feel_consitpate",
+			"reply": "",
+			"tag": "form",
+			"text": "How stressed are you",
+			"type": "single_choice",
+			"optionMap": [
+				{
+					"name": "Not at all",
+					"value": "Not at all"
+				},
+				{
+					"name": "Low",
+					"value": "Low"
+				},
+				{
+					"name": "Moderate",
+					"value": "Moderate"
+				},
+				{
+					"name": "High",
+					"value": "High"
+				}
+			]
+		},
+		{
+			"id": "feel_consitpate",
+			"component": "inputRadioV4",
+			"group": "lifestyle_questions",
+			"next": "check_bloat",
+			"reply": "",
+			"tag": "form",
+			"text": "Do you feel constipated?",
+			"type": "single_choice",
+			"optionMap": [
+				{
+					"name": "No",
+					"value": "No"
+				},
+				{
+					"name": "Yes",
+					"value": "Yes"
+				},
+				{
+					"name": "I have IBS",
+					"value": "I have IBS"
+				}
+			],
+			"fn": {
+				"if": [
+					{
+						"==": [
+							{
+								"var": "reply"
+							},
+							"Yes"
+						]
+					},
+					"energy_level",
+					"check_bloat"
+				]
+			}
+		},
+		{
+			"id": "check_bloat",
+			"component": "inputRadioV4",
+			"group": "lifestyle_questions",
+			"next": "energy_level",
+			"reply": "",
+			"tag": "form",
+			"text": "Do you have Acidity, Bloating, Gas or Indigestion?",
+			"type": "single_choice",
+			"optionMap": [
+				{
+					"name": "No",
+					"value": "No"
+				},
+				{
+					"name": "Yes",
+					"value": "Yes"
+				}
+			]
+		},
+		{
+			"id": "energy_level",
+			"component": "inputRadioV4",
+			"group": "lifestyle_questions",
+			"next": "photo_q",
+			"reply": "",
+			"tag": "form",
+			"text": "Describe your energy levels",
+			"type": "single_choice",
+			"optionMap": [
+				{
+					"name": "Always high",
+					"value": "Always high"
+				},
+				{
+					"name": "Low when I wake up, but gradually increases",
+					"value": "Low when I wake up, but gradually increases"
+				},
+				{
+					"name": "Very low in the afternoon",
+					"value": "Very low in the afternoon"
+				},
+				{
+					"name": "Low by evening/ night",
+					"value": "Low by evening/ night"
+				},
+				{
+					"name": "Always low",
+					"value": "Always low"
+				}
+			]
+		},
+		{
+			"id": "photo_q",
+			"component": "inputImage",
+			"group": "scalp_photo",
+			"next": null,
+			"reply": "",
+			"sub_text": "After you place the order, Traya doctors will need this photo to validate your plan and precisely prescribe your dosage",
+			"tag": "form",
+			"text": "Our doctors need a photo of your scalp.",
+			"type": "file"
+		}
+	]
+}

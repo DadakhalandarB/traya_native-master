@@ -1,0 +1,114 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: white;
+  width: 100%;
+
+}
+
+.hamburger,
+.close {
+  border: none;
+  cursor: pointer;
+  position: absolute;
+  top: 12px;
+  right: 90px;
+  width: 36px;
+  height: 36px;
+}
+@media only screen and (max-width:950px) {
+  .hamburger,
+  .close {
+    border: none;
+    cursor: pointer;
+    position: absolute;
+    top: 4px;
+    right: 75px;
+    width: 36px;
+    height: 36px;
+  }
+}
+@media only screen and (max-width:768px) {
+  .hamburger,
+  .close {
+    border: none;
+    cursor: pointer;
+    position: absolute;
+    top: 4px;
+    right: 20px;
+    width: 36px;
+    height: 36px;
+  }
+}
+@media only screen and (max-width: 1284px) and (min-width: 950px){
+  .hamburger,
+  .close {
+    border: none;
+    cursor: pointer;
+    position: absolute;
+    top: 4px;
+    right: 70px;
+    width: 36px;
+    height: 36px;
+  }
+}
+
+.hamburger img,
+.close img {
+  width: 100%;
+  height: 100%;
+
+}
+
+.navbar {
+  position: absolute;
+  z-index: 1000;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  /* overflow: hidden; */
+  overflow-y: scroll;
+  list-style: none;
+  background-image: url("../assets/images/backgroundhair.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  transform: translateY(-100%);
+  transition: transform 0.5s ease;
+}
+
+.navbar:target {
+  transform: translateY(0);
+}
+
+li a {
+  display: block;
+  font-family: 'Open Sans', sans-serif;
+  color: white;
+  font-weight: bold;
+  font-size: 1.2rem;
+  text-decoration: none;
+  border-bottom: 1px solid black;
+  padding-bottom: 0.5rem;
+}
+
+li a:hover,
+li a:focus {
+  border-bottom: 1px solid white;
+}
+
+@media only screen and (max-width:500px) {
+  .navbar {
+    background-image: url("../assets/images/mobileNav.png");
+  }
+}
+
+@media only screen and (max-width:1500px) {
+  .navbar {
+    background-image: url("../assets/images/mobileNav.png");
+  }
+}

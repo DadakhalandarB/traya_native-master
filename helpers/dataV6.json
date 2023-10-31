@@ -1,0 +1,845 @@
+{
+	"questions": [
+		{
+			"id": "first_name",
+			"component": "inputName",
+			"group": "basic_information",
+			"next": "phone_number",
+			"reply": "",
+			"tag": "user",
+			"text": "Before we start, can we get your name?",
+			"type": "text"
+		},
+		{
+			"id": "phone_number",
+			"component": "inputPhoneNumber",
+			"group": "basic_information",
+			"next": "email",
+			"reply": "",
+			"sub_text": "",
+			"tag": "user",
+			"text": "Phone Number",
+			"type": "tel"
+		},
+		{
+			"id": "email",
+			"component": "inputEmail",
+			"group": "basic_information",
+			"next": "C1d",
+			"reply": "",
+			"tag": "user",
+			"text": "Email",
+			"type": "text"
+		},
+		{
+			"id": "C1d",
+			"component": "inputAge",
+			"group": "basic_information",
+			"next": "gender",
+			"reply": "",
+			"tag": "form",
+			"text": "How old are you?",
+			"type": "tel"
+		},
+		{
+			"id": "gender",
+			"component": "inputRadioV4",
+			"group": "basic_information",
+			"next": "male-branch",
+			"reply": "",
+			"tag": "user",
+			"text": "Gender",
+			"type": "single_choice",
+			"optionMap": [
+				{
+					"name": "Male",
+					"value": "M"
+				},
+				{
+					"name": "Female",
+					"value": "F"
+				}
+			],
+			"fn": {
+				"if": [
+					{
+						"==": [
+							{
+								"var": "reply"
+							},
+							"M"
+						]
+					},
+					"male-branch",
+					"female-branch"
+				]
+			}
+		},
+		{
+			"id": "male-branch",
+			"component": "inputRadioV4",
+			"group": "hair_assessment",
+			"next": "3i",
+			"reply": "",
+			"tag": "form",
+			"text": "Do you have dandruff?",
+			"type": "single_choice",
+			"optionMap": [
+				{
+					"name": "No",
+					"value": "No"
+				},
+				{
+					"name": "Yes, mild that comes and goes",
+					"value": "Yes, mild that comes and goes"
+				},
+
+				{
+					"name": "Yes, heavy dandruff that sticks to the scalp",
+					"value": "Yes, heavy dandruff that sticks to the scalp"
+				},
+				{
+					"name": "I have Psoriasis",
+					"value": "I have Psoriasis"
+				},
+				{
+					"name": "I have Seborrheic Dermatitis",
+					"value": "I have Seborrheic Dermatitis"
+				}
+			]
+		},
+		{
+			"id": "female-branch",
+			"component": "inputRadioV4",
+			"group": "hair_assessment",
+			"next": "4b",
+			"reply": "",
+			"tag": "form",
+			"text": "Do you have dandruff?",
+			"type": "single_choice",
+			"optionMap": [
+				{
+					"name": "No",
+					"value": "No"
+				},
+				{
+					"name": "Yes, mild that comes and goes",
+					"value": "Yes, mild that comes and goes"
+				},
+
+				{
+					"name": "Yes, heavy dandruff that sticks to the scalp",
+					"value": "Yes, heavy dandruff that sticks to the scalp"
+				},
+				{
+					"name": "I have Psoriasis",
+					"value": "I have Psoriasis"
+				},
+				{
+					"name": "I have Seborrheic Dermatitis",
+					"value": "I have Seborrheic Dermatitis"
+				}
+			]
+		},
+		{
+			"id": "2c",
+			"component": "inputRadioV4",
+			"group": "hair_assessment",
+			"next": "2e",
+			"reply": "",
+			"tag": "form",
+			"text": "Family history of Hair loss",
+			"type": "single_choice",
+			"optionMap": [
+				{
+					"name": "Mother or anyone from mother's side of the family",
+					"value": "Mother or anyone from mother's side of the family"
+				},
+				{
+					"name": "Father or anyone from father's side of the family",
+					"value": "Father or anyone from father's side of the family"
+				},
+				{
+					"name": "Both",
+					"value": "Both"
+				},
+				{
+					"name": "None",
+					"value": "None"
+				}
+			]
+		},
+	
+		{
+			"id": "2e",
+			"component": "inputRadioV4",
+			"group": "hair_assessment",
+			"next": "3b",
+			"reply": "",
+			"showImages": true,
+			"tag": "form",
+			"text": "Which image best describes your hair loss?",
+			"type": "single_choice",
+			"optionMap": [
+				{
+					"name": "Stage-1",
+					"value": "Stage-1",
+					"id": "Stage-1",
+					"image_url": "male/stage1.svg"
+				},
+				{
+					"name": "Stage-2",
+					"value": "Stage-2",
+					"id": "Stage-2",
+					"image_url": "male/stage2.svg"
+				},
+				{
+					"name": "Stage-3",
+					"value": "Stage-3",
+					"id": "Stage-3",
+					"image_url": "male/stage3.svg"
+				},
+				{
+					"name": "Stage-4",
+					"value": "Stage-4",
+					"id": "Stage-4",
+					"image_url": "male/stage4.svg"
+				},
+				{
+					"name": "Stage-5",
+					"value": "Stage-5",
+					"id": "Stage-5",
+					"image_url": "male/stage5.svg"
+				},
+				{
+					"name": "Stage-6",
+					"value": "Stage-6",
+					"id": "Stage-6",
+					"image_url": "male/stage6.svg"
+				},
+				{
+					"name": "Coin Size Patch",
+					"value": "Coin Size Patch",
+					"id": "Stage-7",
+					"image_url": "male/coin-size.svg"
+				},
+				{
+					"name": "Heavy Hair Fall Across The Head",
+					"value": "Heavy Hair Fall Across The Head",
+					"id": "Stage-8",
+					"image_url": "male/hair-fall.svg"
+				}
+			]
+		},
+		{
+			"id": "3b",
+			"component": "inputRadioV4",
+			"group": "lifestyle_questions",
+			"next": "3c",
+			"reply": "",
+			"tag": "form",
+			"text": "How energetic do you feel?",
+			"type": "single_choice",
+			"optionMap": [
+				{
+					"name": "Always high",
+					"value": "Always high"
+				},
+				{
+					"name": "Low when I wake up, but gradually increases",
+					"value": "Low when I wake up, but gradually increases"
+				},
+				{
+					"name": "Very low in afternoon",
+					"value": "Very low in afternoon"
+				},
+				{
+					"name": "Low by evening/night",
+					"value": "Low by evening/night"
+				},
+				{
+					"name": "Always low",
+					"value": "Always low"
+				}
+			]
+		},
+		{
+			"id": "3c",
+			"component": "inputRadioV4",
+			"group": "lifestyle_questions",
+			"next": "3d",
+			"reply": "",
+			"tag": "form",
+			"text": "Do you feel constipated?",
+			"type": "single_choice",
+			"optionMap": [
+				{
+					"name": "No/Rarely",
+					"value": "No/Rarely"
+				},
+				{
+					"name": "Yes",
+					"value": "Yes"
+				},
+				{
+					"name": "Unsatisfactory bowel movements",
+					"value": "Unsatisfactory bowel movements"
+				},
+				{
+					"name": "Suffering from IBS (irritable bowel syndrome) /dysentery",
+					"value": "Suffering from IBS (irritable bowel syndrome) /dysentery"
+				}
+			]
+		},
+		{
+			"id": "3d",
+			"component": "inputRadioV4",
+			"group": "lifestyle_questions",
+			"next": "3e",
+			"reply": "",
+			"tag": "form",
+			"text": "How stressed are you?",
+			"type": "single_choice",
+			"optionMap": [
+				{
+					"name": "None",
+					"value": "None"
+				},
+				{
+					"name": "Low",
+					"value": "Low"
+				},
+				{
+					"name": "Moderate(work, family etc )",
+					"value": "Moderate(work, family etc )"
+				},
+				{
+					"name": "High (Loss of close one, separation, home, illness)",
+					"value": "High (Loss of close one, separation, home, illness)"
+				}
+			]
+		},
+		{
+			"id": "3e",
+			"component": "inputRadioV4",
+			"group": "lifestyle_questions",
+			"next": "3f",
+			"reply": "",
+			"tag": "form",
+			"text": "How well do you sleep?",
+			"type": "single_choice",
+			"optionMap": [
+				{
+					"name": "Very peacefully for 6 to 8 hours",
+					"value": "Very peacefully for 6 to 8 hours"
+				},
+				{
+					"name": "Disturbed sleep, I wake up at least one time during the night",
+					"value": "Disturbed sleep, I wake up at least one time during the night"
+				},
+				{
+					"name": "Have difficulty falling asleep",
+					"value": "Have difficulty falling asleep"
+				}
+			]
+		},
+		{
+			"id": "3f",
+			"component": "inputRadioV4",
+			"group": "lifestyle_questions",
+			"next": "3j",
+			"reply": "",
+			"tag": "form",
+			"text": "Okay, what about other problems like Thyroid imbalance, Vitamin D3, Vitamin B12 deficiencies, Lipids etc.",
+			"type": "single_choice",
+			"optionMap": [
+				{
+					"name": "Yes",
+					"value": "Yes",
+					"id": "Answer 1"
+				},
+				{
+					"name": "No",
+					"value": "No",
+					"id": "Answer 2"
+				},
+				{
+					"name": "Not Sure",
+					"value": "Not Sure",
+					"id": "Answer 3"
+				}
+			]
+		},
+		{
+			"id": "3h",
+			"component": "inputSlotsV4",
+			"group": "lifestyle_questions",
+			"next": "photo_q",
+			"reply": "",
+			"slots": "GET_SLOTS_API",
+			"tag": "form",
+			"text": "Would you like to book a free appointment with our hair expert?",
+			"type": "single_choice",
+			"optionMap": [
+				{
+					"name": "Yes",
+					"value": "Yes",
+					"id": "3h_option1"
+				},
+				{
+					"name": "I'll do this later",
+					"value": "I'll do this later",
+					"id": "3h_option2"
+				}
+			]
+		},
+		{
+			"id": "3i",
+			"component": "inputCheckboxV4",
+			"group": "hair_assessment",
+			"next": "2c",
+			"reply": "",
+			"sub_text": "Choose as many as you like",
+			"tag": "form",
+			"text": "What are your major hair goals?",
+			"type": "multiple_choice",
+			"optionMap": [
+				{
+					"name": "Regrow hair",
+					"value": "Regrow hair"
+				},
+				{
+					"name": "Control hair fall",
+					"value": "Control hair fall"
+				},
+				{
+					"name": "I have a good set of hair, I want to maintain it.",
+					"value": "I have a good set of hair, I want to maintain it."
+				},
+				{
+					"name": "Work on hair quality",
+					"value": "Work on hair quality"
+				},
+				{
+					"name": "Delay greying",
+					"value": "Delay greying"
+				}
+			]
+		},
+		{
+			"id": "3j",
+			"component": "inputRadioV4",
+			"group": "lifestyle_questions",
+			"next": "3h",
+			"reply": "",
+			"tag": "form",
+			"text": "Do you have high blood pressure(Hypertension) ?",
+			"type": "single_choice",
+			"optionMap": [
+				{
+					"name": "Yes",
+					"value": "Yes"
+				},
+				{
+					"name": "No",
+					"value": "No"
+				},
+				{
+					"name": "Not Sure",
+					"value": "Not Sure"
+				}
+			]
+		},
+		{
+			"id": "photo_q",
+			"component": "inputImage",
+			"group": "scalp_photo",
+			"next": null,
+			"reply": "",
+			"sub_text": "Take a selfie of your entire scalp to help our doctors diagnose you accurately.",
+			"tag": "form",
+			"text": "One last thing, our doctors need a photo of your scalp!",
+			"type": "file"
+		},
+		{
+			"id": "4b",
+			"component": "inputCheckboxV4",
+			"group": "hair_assessment",
+			"next": "4d",
+			"reply": "",
+			"sub_text": "Choose as many as you like",
+			"tag": "form",
+			"text": "What are your major hair goals?",
+			"type": "multiple_choice",
+			"optionMap": [
+				{
+					"name": "Regrow hair",
+					"value": "Regrow hair"
+				},
+				{
+					"name": "Control hair fall",
+					"value": "Control hair fall"
+				},
+				{
+					"name": "I have a good set of hair, I want to maintain it.",
+					"value": "I have a good set of hair, I want to maintain it."
+				},
+				{
+					"name": "Work on hair quality",
+					"value": "Work on hair quality"
+				},
+				{
+					"name": "Delay greying",
+					"value": "Delay greying"
+				}
+			]
+		},
+		{
+			"id": "4d",
+			"component": "inputRadioV4",
+			"group": "hair_assessment",
+			"next": "4f",
+			"reply": "",
+			"tag": "form",
+			"text": "Family history of Hair loss",
+			"type": "single_choice",
+			"optionMap": [
+				{
+					"name": "Mother or anyone from mother's side of the family",
+					"value": "Mother or anyone from mother's side of the family"
+				},
+				{
+					"name": "Father or anyone from father's side of the family",
+					"value": "Father or anyone from father's side of the family"
+				},
+				{
+					"name": "Both",
+					"value": "Both"
+				},
+				{
+					"name": "None",
+					"value": "None"
+				}
+			]
+		},
+	
+		{
+			"id": "4f",
+			"component": "inputRadioV4",
+			"showImages": true,
+			"group": "hair_assessment",
+			"reply": "",
+			"text": "Which image best describes your hair loss?",
+			"type": "single_choice",
+			"tag": "form",
+			"next": "4h",
+			"optionMap": [
+				{
+					"name": "Stage-1",
+					"value": "Stage-1",
+					"id": "Stage-1",
+					"image_url": "female/stage1.svg"
+				},
+				{
+					"name": "Stage-2",
+					"value": "Stage-2",
+					"id": "Stage-2",
+					"image_url": "female/stage2.svg"
+				},
+				{
+					"name": "Stage-3",
+					"value": "Stage-3",
+					"id": "Stage-3",
+					"image_url": "female/stage3.svg"
+				},
+				{
+					"name": "Stage-4",
+					"value": "Stage-4",
+					"id": "Stage-4",
+					"image_url": "female/stage4.svg"
+				},
+				{
+					"name": "Stage-5",
+					"value": "Stage-5",
+					"id": "Stage-5",
+					"image_url": "female/stage5.svg"
+				},
+				{
+					"name": "Stage-6",
+					"value": "Stage-6",
+					"id": "Stage-6",
+					"image_url": "female/stage6.svg"
+				},
+				{
+					"name": "Coin Size Patch",
+					"value": "Coin Size Patch",
+					"id": "Stage-7",
+					"image_url": "female/coin-size.svg"
+				},
+				{
+					"name": "Heavy Hair Fall Across The Head",
+					"value": "Heavy Hair Fall Across The Head",
+					"id": "Stage-8",
+					"image_url": "female/hair-fall.svg"
+				}
+			]
+		},
+		{
+			"id": "4h",
+			"component": "inputRadioV4",
+			"group": "lifestyle_questions",
+			"next": "4i",
+			"reply": "",
+			"tag": "form",
+			"text": "How energetic do you feel?",
+			"type": "single_choice",
+			"optionMap": [
+				{
+					"name": "Always high",
+					"value": "Always high"
+				},
+				{
+					"name": "Low when I wake up, but gradually increases",
+					"value": "Low when I wake up, but gradually increases"
+				},
+				{
+					"name": "Very low in afternoon",
+					"value": "Very low in afternoon"
+				},
+				{
+					"name": "Low by evening/night",
+					"value": "Low by evening/night"
+				},
+				{
+					"name": "Always low",
+					"value": "Always low"
+				}
+			]
+		},
+		{
+			"id": "4i",
+			"component": "inputRadioV4",
+			"group": "lifestyle_questions",
+			"next": "4j",
+			"reply": "",
+			"tag": "form",
+			"text": "Do you feel constipated?",
+			"type": "single_choice",
+			"optionMap": [
+				{
+					"name": "No/Rarely",
+					"value": "No/Rarely"
+				},
+				{
+					"name": "Yes",
+					"value": "Yes"
+				},
+				{
+					"name": "Unsatisfactory bowel movements",
+					"value": "Unsatisfactory bowel movements"
+				},
+				{
+					"name": "Suffering from IBS (irritable bowel syndrome) /dysentery",
+					"value": "Suffering from IBS (irritable bowel syndrome) /dysentery"
+				}
+			]
+		},
+		{
+			"id": "4j",
+			"component": "inputRadioV4",
+			"group": "lifestyle_questions",
+			"next": "4k",
+			"reply": "",
+			"tag": "form",
+			"text": "How stressed are you?",
+			"type": "single_choice",
+			"optionMap": [
+				{
+					"name": "None",
+					"value": "None"
+				},
+				{
+					"name": "Low",
+					"value": "Low"
+				},
+				{
+					"name": "Moderate(work, family etc )",
+					"value": "Moderate(work, family etc )"
+				},
+				{
+					"name": "High (Loss of close one, separation, home, illness)",
+					"value": "High (Loss of close one, separation, home, illness)"
+				}
+			]
+		},
+		{
+			"id": "4k",
+			"component": "inputRadioV4",
+			"group": "lifestyle_questions",
+			"next": "4l",
+			"reply": "",
+			"tag": "form",
+			"text": "How well do you sleep?",
+			"type": "single_choice",
+			"optionMap": [
+				{
+					"name": "Very peacefully for 6 to 8 hours",
+					"value": "Very peacefully for 6 to 8 hours"
+				},
+				{
+					"name": "Disturbed sleep, I wake up at least one time during the night",
+					"value": "Disturbed sleep, I wake up at least one time during the night"
+				},
+				{
+					"name": "Have difficulty falling asleep",
+					"value": "Have difficulty falling asleep"
+				}
+			]
+		},
+		{
+			"id": "4l",
+			"component": "inputRadioV4",
+			"group": "lifestyle_questions",
+			"next": "4m",
+			"reply": "",
+			"tag": "form",
+			"text": "Are you suffering from anemia (low haemoglobin) or any other vitamin deficiency?",
+			"type": "single_choice",
+			"optionMap": [
+				{
+					"name": "No",
+					"value": "No",
+					"id": "Answer 1"
+				},
+				{
+					"name": "Yes",
+					"value": "Yes",
+					"id": "Answer 2"
+				},
+				{
+					"name": "Not Sure",
+					"value": "Not Sure",
+					"id": "Answer 3"
+				}
+			]
+		},
+		{
+			"id": "4m",
+			"component": "inputRadioV4",
+			"group": "lifestyle_questions",
+			"next": "4n",
+			"reply": "",
+			"tag": "form",
+			"text": "Are you going through any of the stages below?",
+			"type": "single_choice",
+			"optionMap": [
+				{
+					"name": "Pregnant",
+					"value": "Pregnant"
+				},
+				{
+					"name": "Post Pregnancy (Delivered in the last one year)",
+					"value": "Post Pregnancy (Delivered in the last one year)"
+				},
+				{
+					"name": "Menopause",
+					"value": "Menopause"
+				},
+				{
+					"name": "None",
+					"value": "None"
+				}
+			],
+			"fn": {
+				"if": [
+					{
+						"==": [
+							{
+								"var": "reply"
+							},
+							"Post Pregnancy (Delivered in the last one year)"
+						]
+					},
+					"4ma",
+					"4n"
+				]
+			}
+		},
+		{
+			"id": "4ma",
+			"component": "inputRadioV4",
+			"group": "lifestyle_questions",
+			"next": "4n",
+			"reply": "",
+			"type": "single_choice",
+			"tag": "form",
+			"text": "Are you breastfeeding?",
+			"optionMap": [
+				{
+					"name": "Yes",
+					"value": "Yes"
+				},
+				{
+					"name": "No",
+					"value": "No"
+				}
+			]
+		},
+		{
+			"id": "4n",
+			"component": "inputCheckboxV4",
+			"group": "lifestyle_questions",
+			"next": "4q",
+			"reply": "",
+			"sub_text": "Choose as many as you like",
+			"type": "multiple_choice",
+			"tag": "form",
+			"text": "Could you be suffering through any of the below?",
+			"optionMap": [
+				{
+					"name": "None",
+					"value": "None"
+				},
+				{
+					"name": "PCOS",
+					"value": "PCOS"
+				},
+				{
+					"name": "Depression",
+					"value": "Depression"
+				},
+				{
+					"name": "Hormonal Imbalance",
+					"value": "Hormonal Imbalance"
+				},
+				{
+					"name": "Thyroid",
+					"value": "Thyroid"
+				}
+			]
+		},
+		{
+			"id": "4q",
+			"component": "inputSlotsV4",
+			"group": "lifestyle_questions",
+			"next": "photo_q",
+			"reply": "",
+			"slots": "GET_SLOTS_API",
+			"type": "single_choice",
+			"tag": "form",
+			"text": "Would you like to book a free appointment with our hair expert?",
+			"optionMap": [
+				{
+					"name": "Yes",
+					"value": "Yes",
+					"id": "4q_option1"
+				},
+				{
+					"name": "I'll do this later",
+					"value": "I'll do this later",
+					"id": "4q_option2"
+				}
+			]
+		}
+	]
+}

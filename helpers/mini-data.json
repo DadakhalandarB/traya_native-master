@@ -1,0 +1,36 @@
+{
+	"questions": [
+		{
+			"id": "final_page",
+			"component": "miniform",
+			"group": "basic_information",
+			"next": "4q",
+			"reply": "",
+			"tag": "user",
+			"text": "Please Fill In The Details Below.",
+			"type": "text"
+		},
+		{
+			"id": "4q",
+			"component": "miniInputSlots",
+			"group": "lifestyle_questions",
+			"next": null,
+			"reply": "",
+			"type": "single_choice",
+			"tag": "form",
+			"text": "Would you like to book a free appointment with our hair expert?",
+			"optionMap": [
+				{
+					"name": "Yes",
+					"value": "Yes",
+					"id": "4q_option1"
+				},
+				{
+					"name": "I'll do this later",
+					"value": "I'll do this later",
+					"id": "4q_option2"
+				}
+			]
+		}
+	]
+}

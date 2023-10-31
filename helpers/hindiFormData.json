@@ -1,0 +1,1066 @@
+{
+	"questions": [
+		{
+			"id": "first_name",
+			"component": "inputName",
+			"group": "basic_information",
+			"next": "phone_number",
+			"reply": "",
+			"tag": "user",
+			"text": "आपका नाम",
+			"type": "text"
+		},
+		{
+			"id": "phone_number",
+			"component": "inputPhoneNumber",
+			"group": "basic_information",
+			"next": "email",
+			"reply": "",
+			"sub_text": "",
+			"tag": "user",
+			"text": "मोबाइल नंबर",
+			"type": "tel"
+		},
+		{
+			"id": "email",
+			"component": "inputEmail",
+			"group": "basic_information",
+			"next": "C1d",
+			"reply": "",
+			"tag": "user",
+			"text": "ईमेल",
+			"type": "text"
+		},
+		{
+			"id": "C1d",
+			"component": "inputAge",
+			"group": "basic_information",
+			"next": "gender",
+			"reply": "",
+			"tag": "form",
+			"text": "उम्र",
+			"type": "tel"
+		},
+		{
+			"id": "gender",
+			"component": "inputRadio",
+			"group": "basic_information",
+			"next": "male-branch",
+			"reply": "",
+			"tag": "user",
+			"text": "लिंग",
+			"type": "single_choice",
+			"optionMap": [
+				{
+					"name": "पुरुष",
+					"value": "M"
+				},
+				{
+					"name": "महिला",
+					"value": "F"
+				}
+			],
+			"fn": {
+				"if": [
+					{
+						"==": [
+							{
+								"var": "reply"
+							},
+							"F"
+						]
+					},
+					"female-branch",
+					"male-branch"
+				]
+			}
+		},
+		{
+			"id": "male-branch",
+			"component": "inputRadio",
+			"group": "hair_assessment",
+			"next": "m22",
+			"reply": "",
+			"tag": "form",
+			"text": "क्या आपको डैंड्रफ है?",
+			"type": "single_choice",
+			"optionMap": [
+				{
+					"name": "नहीं",
+					"value": "नहीं"
+				},
+				{
+					"name": "हां, हल्का सा जो आता जाता है",
+					"value": "हां, हल्का सा जो आता जाता है"
+				},
+
+				{
+					"name": "हां, बहुत ज्यादा जो सर को चिपकता है",
+					"value": "हां, बहुत ज्यादा जो सर को चिपकता है"
+				},
+				{
+					"name":"मुझे सोरायसिस (Psoriasis) है",
+					"value":"मुझे सोरायसिस (Psoriasis) है"	
+				},
+				{
+					"name":"मुझे सेबोरहाइक डर्मेटाइटिस (Seborrheic Dermatitis) है",
+					"value":"मुझे सेबोरहाइक डर्मेटाइटिस (Seborrheic Dermatitis) है"	
+				}
+			]
+		},
+		{
+			"id": "m22",
+			"component": "inputCheckbox",
+			"group": "hair_assessment",
+			"next": "2c",
+			"reply": "",
+			"tag": "form",
+			"text": "आप हेयर ट्रीटमेंट क्यों लेना चाहते हो?",
+			"type": "multiple_choice",
+			"optionMap": [
+				{
+					"name": "बाल फिरसे उगाने है",
+					"value": "बाल फिरसे उगाने है"
+				},
+				{
+					"name": "बालो का गिरना रोकना है",
+					"value": "बालो का गिरना रोकना है"
+				},
+				{
+					"name": "बालो की क्वालिटी बेहतर करनी है",
+					"value": "बालो की क्वालिटी बेहतर करनी है"
+				},
+				{
+					"name": "सफ़ेद बालो को रोकना है",
+					"value": "सफ़ेद बालो को रोकना है"
+				},
+				{
+					"name": "अभी पता नहीं",
+					"value": "अभी पता नहीं"
+				}
+			]
+		},
+		{
+			"id": "2c",
+			"component": "inputRadio",
+			"group": "hair_assessment",
+			"next": "2e",
+			"reply": "",
+			"tag": "form",
+			"text": "क्या आपके घर में किसी को बाल झड़ने की समस्या है?",
+			"type": "single_choice",
+			"optionMap": [
+				{
+					"name": "​​माँ या माँ के फॅमिली में",
+					"value": "​​माँ या माँ के फॅमिली में"
+				},
+				{
+					"name": "पिता या पिता के फॅमिली में",
+					"value": "पिता या पिता के फॅमिली में"
+				},
+				{
+					"name": "माँ और पिता दोनों को है",
+					"value": "माँ और पिता दोनों को है"
+				},
+				{
+					"name": "किसी को भी नहीं",
+					"value": "किसी को भी नहीं"
+				}
+			]
+		},
+		{
+			"id": "2e",
+			"component": "inputRadio",
+			"group": "hair_assessment",
+			"next": "3b",
+			"reply": "",
+			"showImages": true,
+			"tag": "form",
+			"text": "इनमे से कोनसी इमेज आपके हैरलोस (Hairloss) को सही दर्शाती है?",
+			"type": "single_choice",
+			"optionMap": [
+				{
+					"name": "Stage-1",
+					"value": "Stage-1",
+					"id": "Stage-1",
+					"image_url": "male/stage1.svg"
+				},
+				{
+					"name": "Stage-2",
+					"value": "Stage-2",
+					"id": "Stage-2",
+					"image_url": "male/stage2.svg"
+				},
+				{
+					"name": "Stage-3",
+					"value": "Stage-3",
+					"id": "Stage-3",
+					"image_url": "male/stage3.svg"
+				},
+				{
+					"name": "Stage-4",
+					"value": "Stage-4",
+					"id": "Stage-4",
+					"image_url": "male/stage4.svg"
+				},
+				{
+					"name": "Stage-5",
+					"value": "Stage-5",
+					"id": "Stage-5",
+					"image_url": "male/stage5.svg"
+				},
+				{
+					"name": "Stage-6",
+					"value": "Stage-6",
+					"id": "Stage-6",
+					"image_url": "male/stage6.svg"
+				},
+				{
+					"name": "Coin Size Patch",
+					"value": "Coin Size Patch",
+					"id": "Stage-7",
+					"image_url": "male/coin-size.svg"
+				},
+				{
+					"name": "Heavy Hair Fall Across The Head",
+					"value": "Heavy Hair Fall Across The Head",
+					"id": "Stage-8",
+					"image_url": "male/hair-fall.svg"
+				}
+			]
+		},
+		{
+			"id": "3b",
+			"component": "inputRadio",
+			"group": "lifestyle_questions",
+			"next": "3c",
+			"reply": "",
+			"tag": "form",
+			"text": "आप पुरे दिन में कैसे महसूस करते है?",
+			"type": "single_choice",
+			"optionMap": [
+				{
+					"name": "पुरे दिन हाई एनर्जी",
+					"value": "पुरे दिन हाई एनर्जी"
+				},
+				{
+					"name": "एनर्जी बस सुबह उठने पर कम होती है",
+					"value": "एनर्जी बस सुबह उठने पर कम होती है"
+				},
+				{
+					"name": "एनर्जी दोपहर में कम होती है",
+					"value": "एनर्जी दोपहर में कम होती है"
+				},
+				{
+					"name": "एनर्जी शाम/रात में कम होती है",
+					"value": "एनर्जी शाम/रात में कम होती है"
+				},
+				{
+					"name": "पुरे दिन एनर्जी काम होती है",
+					"value": "पुरे दिन एनर्जी काम होती है"
+				}
+			]
+		},
+		{
+			"id": "3c",
+			"component": "inputRadio",
+			"group": "lifestyle_questions",
+			"next": "3d",
+			"reply": "",
+			"tag": "form",
+			"text": "क्या आपको कब्ज है?",
+			"type": "single_choice",
+			"optionMap": [
+				{
+					"name": "नहीं",
+					"value": "नहीं"
+				},
+				{
+					"name": "हां",
+					"value": "हां"
+				},
+				{
+					"name": "सही से पेट साफ़ ना होना",
+					"value": "सही से पेट साफ़ ना होना"
+				},
+				{
+					"name": "आय.बी.एस या लूस मोशंस",
+					"value": "आय.बी.एस या लूस मोशंस "
+				}
+			],
+			"fn": {
+				"if": [
+					{
+						"==": [
+							{
+								"var": "reply"
+							},
+							"नहीं"
+						]
+					},
+					"3di",
+					"3d"
+				]
+			}
+		},
+		{
+			"id": "3di",
+			"component": "inputRadio",
+			"group": "lifestyle_questions",
+			"next": "3d",
+			"reply": "",
+			"tag": "form",
+			"text": "क्या आपको गैस, एसिडिटी या पेट फूलना की समस्या है?",
+			"type": "single_choice",
+			"optionMap": [
+				{
+					"name": "हां",
+					"value": "हां"
+				},
+				{
+					"name": "नहीं",
+					"value": "नहीं"
+				}
+			]
+		},
+		{
+			"id": "3d",
+			"component": "inputRadio",
+			"group": "lifestyle_questions",
+			"next": "3e",
+			"reply": "",
+			"tag": "form",
+			"text": "क्या आप रोजाना तनाव (stress) महसूस करते है?",
+			"type": "single_choice",
+			"optionMap": [
+				{
+					"name": "नहीं",
+					"value": "नहीं"
+				},
+				{
+					"name": "हां, पर ज्यादा तनाव नहीं है",
+					"value": "हां, पर ज्यादा तनाव नहीं है"
+				},
+				{
+					"name": "थोड़ा तनाव है - काम या पारिवारिक",
+					"value": "थोड़ा तनाव है - काम या पारिवारिक"
+				},
+				{
+					"name": "बहुत ज्यादा तनाव - कोई बीमारी, या किसी का निधन या कोई और कारन",
+					"value": "बहुत ज्यादा तनाव - कोई बीमारी, या किसी का निधन या कोई और कारन"
+				}
+			]
+		},
+		{
+			"id": "3e",
+			"component": "inputRadio",
+			"group": "lifestyle_questions",
+			"next": "3f",
+			"reply": "",
+			"tag": "form",
+			"text": "आप रात को कितनी अच्छी तरह सोते हैं?",
+			"type": "single_choice",
+			"optionMap": [
+				{
+					"name": "6 से 8 घंटे तक शांत नींद",
+					"value": "6 से 8 घंटे तक शांत नींद"
+				},
+				{
+					"name": "रात में कई बार नींद टूटती है",
+					"value": "रात में कई बार नींद टूटती है"
+				},
+				{
+					"name": "सोने में कठिनाई होती है",
+					"value": "सोने में कठिनाई होती है"
+				}
+			]
+		},
+		{
+			"id": "3f",
+			"component": "inputCheckbox",
+			"group": "lifestyle_questions",
+			"next": "photo_q",
+			"reply": "",
+			"tag": "form",
+			"text": "क्या आपको इनमे से कोई तकलीफ है?",
+			"type": "multiple_choice",
+			"optionMap": [
+				{
+					"name": "थाइरोइड",
+					"value": "थाइरोइड"
+				},
+				{
+					"name": "विटामिन D3 की कमी",
+					"value": "विटामिन D3 की कमी"
+				},
+				{
+					"name": "विटामिन B12 की कमी",
+					"value": "विटामिन B12 की कमी"
+				},
+				{
+					"name": "कोलेस्ट्रॉल बढ़ा हुआ है",
+					"value": "कोलेस्ट्रॉल बढ़ा हुआ है"
+				},
+				{
+					"name": "हाई ब्लड प्रेशर (हाइपरटेंशन)",
+					"value": "हाई ब्लड प्रेशर (हाइपरटेंशन)"
+				},
+				{
+					"name": "नहीं",
+					"value": "नहीं"
+				}
+			]
+		},
+		{
+			"id": "3h",
+			"component": "inputSlots",
+			"group": "lifestyle_questions",
+			"next": "photo_q",
+			"reply": "",
+			"sub_text": "हमारे हेयर एक्सपर्ट आपके बाल झड़ने का सही कारन समझने में मदद करेंगे",
+			"tag": "form",
+			"text": "क्या आप Traya हेयर एक्सपर्ट के साथ फ्री कॉल बुक करना चाहते हैं?",
+			"type": "single_choice",
+			"optionMap": [
+				{
+					"name": "हां",
+					"value": "हां",
+					"id": "4q_option1"
+				},
+				{
+					"name": "नहीं",
+					"value": "नहीं",
+					"id": "4q_option2"
+				}
+			]
+		},
+		{
+			"id": "female-branch",
+			"component": "inputRadio",
+			"group": "hair_assessment",
+			"next": "f22",
+			"reply": "",
+			"tag": "form",
+			"text": "क्या आपको डैंड्रफ है?",
+			"type": "single_choice",
+			"optionMap": [
+				{
+					"name": "नहीं",
+					"value": "नहीं"
+				},
+				{
+					"name": "हां, हल्का सा जो आता जाता है",
+					"value": "हां, हल्का सा जो आता जाता है"
+				},
+
+				{
+					"name": "हां, बहुत ज्यादा जो सर को चिपकता है",
+					"value": "हां, बहुत ज्यादा जो सर को चिपकता है"
+				}
+			]
+		},
+		{
+			"id": "f22",
+			"component": "inputCheckbox",
+			"group": "hair_assessment",
+			"next": "4d",
+			"reply": "",
+			"tag": "form",
+			"text": "आप हेयर ट्रीटमेंट क्यों लेना चाहते हो?",
+			"type": "multiple_choice",
+			"optionMap": [
+				{
+					"name": "बाल फिरसे उगाने है",
+					"value": "बाल फिरसे उगाने है"
+				},
+				{
+					"name": "बालो का गिरना रोकना है",
+					"value": "बालो का गिरना रोकना है"
+				},
+				{
+					"name": "बालो की क्वालिटी बेहतर करनी है",
+					"value": "बालो की क्वालिटी बेहतर करनी है"
+				},
+				{
+					"name": "सफ़ेद बालो को रोकना है",
+					"value": "सफ़ेद बालो को रोकना है"
+				},
+				{
+					"name": "अभी पता नहीं",
+					"value": "अभी पता नहीं"
+				}
+			]
+		},
+		{
+			"id": "4d",
+			"component": "inputRadio",
+			"group": "hair_assessment",
+			"next": "f24",
+			"reply": "",
+			"tag": "form",
+			"text": "क्या आपके घर में किसी को बाल झड़ने की समस्या है?",
+			"type": "single_choice",
+			"optionMap": [
+				{
+					"name": "​​माँ या माँ के फॅमिली में",
+					"value": "​​माँ या माँ के फॅमिली में"
+				},
+				{
+					"name": "पिता या पिता के फॅमिली में",
+					"value": "पिता या पिता के फॅमिली में"
+				},
+				{
+					"name": "माँ और पिता दोनों को है",
+					"value": "माँ और पिता दोनों को है"
+				},
+				{
+					"name": "किसी को भी नहीं",
+					"value": "किसी को भी नहीं"
+				}
+			]
+		},
+		{
+			"id": "f24",
+			"component": "inputCheckbox",
+			"group": "hair_assessment",
+			"next": "4f",
+			"sub_text": "आप एक से ज्यादा भी चुन सकते है",
+			"reply": "",
+			"tag": "form",
+			"text": "आपकी बालों की समस्या के बारे में बताएं",
+			"type": "multiple_choice",
+			"optionMap": [
+				{
+					"name": "भारी बालों का झड़ना",
+					"value": "भारी बालों का झड़ना"
+				},
+				{
+					"name": "चोटी का पतला होना",
+					"value": "चोटी का पतला होना"
+				},
+
+				{
+					"name": "बालो के बीच से सर का दिखना",
+					"value": "बालो के बीच से सर का दिखना"
+				},
+
+				{
+					"name": "बालो का हल्का होना",
+					"value": "बालो का हल्का होना"
+				},
+				{
+					"name": "नए बालो का ना बढ़ना",
+					"value": "नए बालो का ना बढ़ना"
+				},
+				{
+					"name": "बालो का आसानी से टूटना",
+					"value": "बालो का आसानी से टूटना"
+				},
+				{
+					"name": "सिर पर गंजे गोलों का पड़ना",
+					"value": "सिर पर गंजे गोलों का पड़ना"
+				}
+			]
+		},
+		{
+			"id": "4f",
+			"component": "inputRadio",
+			"showImages": true,
+			"group": "hair_assessment",
+			"reply": "",
+			"text": "इनमे से कोनसी इमेज आपके हैरलोस (Hairloss) को सही दर्शाती है?",
+			"type": "single_choice",
+			"tag": "form",
+			"next": "4h",
+			"optionMap": [
+				{
+					"name": "Stage-1",
+					"value": "Stage-1",
+					"id": "Stage-1",
+					"image_url": "female/stage1.svg"
+				},
+				{
+					"name": "Stage-2",
+					"value": "Stage-2",
+					"id": "Stage-2",
+					"image_url": "female/stage2.svg"
+				},
+				{
+					"name": "Stage-3",
+					"value": "Stage-3",
+					"id": "Stage-3",
+					"image_url": "female/stage3.svg"
+				},
+				{
+					"name": "Stage-4",
+					"value": "Stage-4",
+					"id": "Stage-4",
+					"image_url": "female/stage4.svg"
+				},
+				{
+					"name": "Stage-5",
+					"value": "Stage-5",
+					"id": "Stage-5",
+					"image_url": "female/stage5.svg"
+				},
+				{
+					"name": "Stage-6",
+					"value": "Stage-6",
+					"id": "Stage-6",
+					"image_url": "female/stage6.svg"
+				},
+				{
+					"name": "Coin Size Patch",
+					"value": "Coin Size Patch",
+					"id": "Stage-7",
+					"image_url": "female/coin-size.svg"
+				},
+				{
+					"name": "Heavy Hair Fall Across The Head",
+					"value": "Heavy Hair Fall Across The Head",
+					"id": "Stage-8",
+					"image_url": "female/hair-fall.svg"
+				}
+			]
+		},
+		{
+			"id": "4h",
+			"component": "inputRadio",
+			"group": "lifestyle_questions",
+			"next": "4i",
+			"reply": "",
+			"tag": "form",
+			"text": "आप पुरे दिन में कैसे महसूस करते है?",
+			"type": "single_choice",
+			"optionMap": [
+				{
+					"name": "पुरे दिन हाई एनर्जी",
+					"value": "पुरे दिन हाई एनर्जी"
+				},
+				{
+					"name": "एनर्जी बस सुबह उठने पर कम होती है",
+					"value": "एनर्जी बस सुबह उठने पर कम होती है"
+				},
+				{
+					"name": "एनर्जी दोपहर में कम होती है",
+					"value": "एनर्जी दोपहर में कम होती है"
+				},
+				{
+					"name": "एनर्जी शाम/रात में कम होती है",
+					"value": "एनर्जी शाम/रात में कम होती है "
+				},
+				{
+					"name": "पुरे दिन एनर्जी काम होती है",
+					"value": "पुरे दिन एनर्जी काम होती है"
+				}
+			]
+		},
+		{
+			"id": "4i",
+			"component": "inputRadio",
+			"group": "lifestyle_questions",
+			"next": "4j",
+			"reply": "",
+			"tag": "form",
+			"text": "क्या आपको कब्ज है?",
+			"type": "single_choice",
+			"optionMap": [
+				{
+					"name": "नहीं",
+					"value": "नहीं"
+				},
+				{
+					"name": "हां",
+					"value": "हां"
+				},
+				{
+					"name": "सही से पेट साफ़ ना होना",
+					"value": "सही से पेट साफ़ ना होना"
+				},
+				{
+					"name": "आय.बी.एस या लूस मोशंस",
+					"value": "आय.बी.एस या लूस मोशंस"
+				}
+			]
+		},
+		{
+			"id": "4j",
+			"component": "inputRadio",
+			"group": "lifestyle_questions",
+			"next": "4k",
+			"reply": "",
+			"tag": "form",
+			"text": "क्या आप रोजाना तनाव महसूस करते है?",
+			"type": "single_choice",
+			"optionMap": [
+				{
+					"name": "नहीं",
+					"value": "नहीं"
+				},
+				{
+					"name": "हां, पर ज्यादा तनाव नहीं है",
+					"value": "हां, पर ज्यादा तनाव नहीं है"
+				},
+				{
+					"name": "थोड़ा तनाव है - काम या पारिवारिक",
+					"value": "थोड़ा तनाव है - काम या पारिवारिक"
+				},
+				{
+					"name": "बहुत ज्यादा तनाव - कोई बीमारी, या किसी का निधन या कोई और कारन",
+					"value": "बहुत ज्यादा तनाव - कोई बीमारी, या किसी का निधन या कोई और कारन"
+				}
+			]
+		},
+		{
+			"id": "4k",
+			"component": "inputRadio",
+			"group": "lifestyle_questions",
+			"next": "4l",
+			"reply": "",
+			"tag": "form",
+			"text": "आपकी नींद कैसी है?",
+			"type": "single_choice",
+			"optionMap": [
+				{
+					"name": "6 से 8 घंटे तक शांत नींद",
+					"value": "6 से 8 घंटे तक शांत नींद"
+				},
+				{
+					"name": "रात में कई बार नींद टूटती है",
+					"value": "रात में कई बार नींद टूटती है"
+				},
+				{
+					"name": "सोने में कठिनाई होती है",
+					"value": "सोने में कठिनाई होती है"
+				}
+			]
+		},
+		{
+			"id": "4l",
+			"component": "inputRadio",
+			"group": "lifestyle_questions",
+			"next": "4m",
+			"reply": "",
+			"tag": "form",
+			"text": " क्या आपको एनीमिया (कम हीमोग्लोबिन) या कोई अन्य विटामिन की कमी है?",
+			"type": "single_choice",
+			"optionMap": [
+				{
+					"name": "नहीं",
+					"value": "नहीं",
+					"id": "Answer 1"
+				},
+				{
+					"name": "हां",
+					"value": "हां",
+					"id": "Answer 2"
+				},
+				{
+					"name": "नहीं पता",
+					"value": "नहीं पता",
+					"id": "Answer 3"
+				}
+			]
+		},
+		{
+			"id": "4m",
+			"component": "inputRadio",
+			"group": "lifestyle_questions",
+			"next": "4n",
+			"reply": "",
+			"tag": "form",
+			"text": "क्या आप…",
+			"type": "single_choice",
+			"optionMap": [
+				{
+					"name": "प्रेग्नेंट है",
+					"value": "प्रेग्नेंट है"
+				},
+				{
+					"name": "गर्भावस्था के बाद का समय",
+					"value": "गर्भावस्था के बाद का समय"
+				},
+				{
+					"name": "मेनोपौज",
+					"value": "मेनोपौज"
+				},
+				{
+					"name": "नहीं",
+					"value": "नहीं"
+				}
+			],
+			"fn": {
+				"if": [
+					{
+						"==": [
+							{
+								"var": "reply"
+							},
+							"गर्भावस्था के बाद का समय"
+						]
+					},
+					"4ma",
+					"4n"
+				]
+			}
+		},
+		{
+			"id": "4ma",
+			"component": "inputRadio",
+			"group": "lifestyle_questions",
+			"next": "4n",
+			"reply": "",
+			"type": "single_choice",
+			"tag": "form",
+			"text": "क्या आप स्तनपान कराते हैं?",
+			"optionMap": [
+				{
+					"name": "नहीं",
+					"value": "नहीं"
+				},
+				{
+					"name": "हां",
+					"value": "हां"
+				}
+			]
+		},
+		{
+			"id": "4n",
+			"component": "inputCheckbox",
+			"group": "lifestyle_questions",
+			"next": "photo_q",
+			"reply": "",
+			"sub_text": "आप एक से ज्यादा भी चुन सकते है",
+			"type": "multiple_choice",
+			"tag": "form",
+			"text": "क्या आपको इनमे से कोई तकलीफ है?",
+			"optionMap": [
+				{
+					"name": "थाइरोइड",
+					"value": "थाइरोइड"
+				},
+				{
+					"name": "पि.सी.ओ.एस",
+					"value": "पि.सी.ओ.एस"
+				},
+				{
+					"name": "हार्मोनल असंतुलन",
+					"value": "हार्मोनल असंतुलन"
+				},
+				{
+					"name": "डिप्रेशन",
+					"value": "डिप्रेशन"
+				},
+				{
+					"name": "नहीं",
+					"value": "नहीं"
+				}
+			]
+		},
+		{
+			"id": "4q",
+			"component": "inputSlots",
+			"group": "lifestyle_questions",
+			"next": "photo_q",
+			"reply": "",
+			"sub_text": "हमारे हेयर एक्सपर्ट आपके बाल झड़ने का सही कारन समझने में मदद करेंगे",
+			"type": "single_choice",
+			"tag": "form",
+			"text": "क्या आप Traya हेयर एक्सपर्ट के साथ फ्री कॉल बुक करना चाहते हैं?",
+			"optionMap": [
+				{
+					"name": "हां",
+					"value": "हां",
+					"id": "4q_option1"
+				},
+				{
+					"name": "नहीं",
+					"value": "नहीं",
+					"id": "4q_option2"
+				}
+			]
+		},
+		{
+			"id": "photo_q",
+			"component": "inputImage",
+			"group": "scalp_photo",
+			"next": null,
+			"reply": "",
+			"sub_text": "अपने पुरे सर की तस्वीर लीजिये ताकि आपके बालो का सही निरिक्षण हो सके",
+			"tag": "form",
+			"text": "आपके सर की तस्वीर लीजिये - इससे डॉक्टर्स को आपका केस बेहतर समझने में मदद होगी",
+			"type": "file"
+		},
+
+		{
+			"id": "2d",
+			"component": "inputRadio",
+			"group": "hair_assessment",
+			"next": "2e",
+			"reply": "",
+			"sub_text": "",
+			"tag": "form",
+			"text": "आपकी बालों की समस्या के बारे में बताएं",
+			"type": "single_choice",
+			"optionMap": [
+				{
+					"name": "हेयरलाइन का पीछे की ओर हटना",
+					"value": "हेयरलाइन का पीछे की ओर हटना"
+				},
+				{
+					"name": "सर के बीचों बीच बालो का झड़ना",
+					"value": "सर के बीचों बीच बालो का झड़ना"
+				},
+				{
+					"name": "दोनों a और b",
+					"value": "दोनों a और b"
+				},
+				{
+					"name": "सिर या शरीर पर गंजे गोलों का पड़ना",
+					"value": "सिर या शरीर पर गंजे गोलों का पड़ना"
+				},
+				{
+					"name": "बहुत ज्यादा बालो का झड़ना",
+					"value": "बहुत ज्यादा बालो का झड़ना"
+				}
+			]
+		},
+
+		{
+			"id": "4d",
+			"component": "inputRadio",
+			"group": "hair_assessment",
+			"next": "4e",
+			"reply": "",
+			"tag": "form",
+			"text": "क्या आपके घर में किसी को बाल झड़ने की समस्या है?",
+			"type": "single_choice",
+			"optionMap": [
+				{
+					"name": "​​माँ या माँ के फॅमिली में",
+					"value": "​​माँ या माँ के फॅमिली में"
+				},
+				{
+					"name": "पिता या पिता के फॅमिली में",
+					"value": "पिता या पिता के फॅमिली में"
+				},
+				{
+					"name": "माँ और पिता दोनों को है",
+					"value": "माँ और पिता दोनों को है"
+				},
+				{
+					"name": "किसी को भी नहीं",
+					"value": "किसी को भी नहीं"
+				}
+			]
+		},
+
+		{
+			"id": "3i",
+			"component": "inputCheckbox",
+			"group": "hair_assessment",
+			"next": "2c",
+			"reply": "",
+			"sub_text": "आप एक से ज्यादा भी चुन सकते है",
+			"tag": "form",
+			"text": "आप हेयर ट्रीटमेंट क्यों लेना चाहते हो?",
+			"type": "multiple_choice",
+			"optionMap": [
+				{
+					"name": "बाल फिरसे उगाने है",
+					"value": "बाल फिरसे उगाने है"
+				},
+				{
+					"name": "बालो का गिरना रोकना है",
+					"value": "बालो का गिरना रोकना है"
+				},
+				{
+					"name": "बालो की क्वालिटी बेहतर करनी है",
+					"value": "बालो की क्वालिटी बेहतर करनी है"
+				},
+				{
+					"name": "सफ़ेद बालो को रोकना है",
+					"value": "सफ़ेद बालो को रोकना है"
+				},
+				{
+					"name": "अभी पता नहीं",
+					"value": "अभी पता नहीं"
+				}
+			]
+		},
+		{
+			"id": "4b",
+			"component": "inputCheckbox",
+			"group": "hair_assessment",
+			"next": "4d",
+			"reply": "",
+			"sub_text": "आप एक से ज्यादा भी चुन सकते है",
+			"tag": "form",
+			"text": "आप हेयर ट्रीटमेंट क्यों लेना चाहते हो?",
+			"type": "multiple_choice",
+			"optionMap": [
+				{
+					"name": "बाल फिरसे उगाने है",
+					"value": "बाल फिरसे उगाने है"
+				},
+				{
+					"name": "बालो का गिरना रोकना है",
+					"value": "बालो का गिरना रोकना है"
+				},
+				{
+					"name": "बालो की क्वालिटी बेहतर करनी है",
+					"value": "बालो की क्वालिटी बेहतर करनी है"
+				},
+				{
+					"name": "सफ़ेद बालो को रोकना है",
+					"value": "सफ़ेद बालो को रोकना है"
+				},
+				{
+					"name": "अभी पता नहीं",
+					"value": "अभी पता नहीं"
+				}
+			]
+		},
+		{
+			"id": "4e",
+			"component": "inputCheckbox",
+			"group": "hair_assessment",
+			"next": "4f",
+			"reply": "",
+			"sub_text": "आप एक से ज्यादा भी चुन सकते है",
+			"type": "multiple_choice",
+			"tag": "form",
+			"text": "आपकी बालों की समस्या के बारे में बताएं?",
+			"optionMap": [
+				{
+					"name": "भारी बालों का झड़ना",
+					"value": "भारी बालों का झड़ना"
+				},
+				{
+					"name": "चोटी का पतला होना",
+					"value": "चोटी का पतला होना"
+				},
+				{
+					"name": "बालो के बीच से सर का दिखना",
+					"value": "बालो के बीच से सर का दिखना"
+				},
+				{
+					"name": "बालो का हल्का होना",
+					"value": "बालो का हल्का होना"
+				},
+				{
+					"name": "नए बालो का ना बढ़ना",
+					"value": "नए बालो का ना बढ़ना"
+				},
+				{
+					"name": "बालो का आसानी से टूटना",
+					"value": "बालो का आसानी से टूटना"
+				},
+				{
+					"name": "सिर पर गंजे गोलों का पड़ना",
+					"value": "सिर पर गंजे गोलों का पड़ना"
+				}
+			]
+		}
+	]
+}
