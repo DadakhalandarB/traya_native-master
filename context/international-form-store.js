@@ -1,3 +1,5 @@
+"use client"
+
 import { createContext, useReducer } from "react";
 import questionsReducer from "./questions-reducer";
 import * as ACTIONS from "./questions-actions";
