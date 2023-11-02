@@ -1,10 +1,9 @@
 import { useRef, useState } from "react";
-import { useHistory } from "react-router-dom";
 import { QuestionsContext } from "../../context/questions-store";
 import compressImage from "@helpers/compressImage";
 import useFormSubmit from "@hooks/useFormSubmit";
 import isEmpty from "lodash/isEmpty";
-import Router from "next/navigation";
+import { useRouter } from "next/navigation";
 import selfie from "@assets/images/selfie.png";
 import { SUBMISSION, SUBMISSION_V3 } from "@constants/routes";
 import { InternationalFormContext } from "@context/international-form-store";
@@ -12,9 +11,8 @@ import Image from "next/image";
 
 const InputImageV3 = ({ block }) => {
   const handleSubmit = useFormSubmit(InternationalFormContext);
-  const history = useHistory();
   const inputRef = useRef(null);
-
+  const router = useRouter()
   const [compressedImage, setCompressedImage] = useState(null);
   const [compressingImage, setCompressingImage] = useState(false);
   const [showButton, setShowButton] = useState(false);
@@ -52,7 +50,7 @@ const InputImageV3 = ({ block }) => {
       return;
     }
     handleSubmit(reply);
-    Router.push(SUBMISSION_V3);
+    router.push(SUBMISSION_V3);
   };
 
   return (
