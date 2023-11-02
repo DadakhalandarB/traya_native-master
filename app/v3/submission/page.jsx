@@ -1,8 +1,16 @@
+import Header from '@/components/Header'
+import Submission from '@/components/submissionV3'
+import InternationalFormContextProvider from '@/context/international-form-store'
 import React from 'react'
 
 const page = () => {
     return (
-        <div>page</div>
+        <>
+            <Header />
+            <InternationalFormContextProvider>
+                <Submission></Submission>
+            </InternationalFormContextProvider>
+        </>
     )
 }
 
