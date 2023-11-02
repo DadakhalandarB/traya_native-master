@@ -4,7 +4,6 @@ import { fetchRequest } from "../../helpers/fetchRequest";
 import useFormSubmit from "../../hooks/useFormSubmit";
 import Loader from "../Loader";
 import Image from "next/image";
-const optionName = require(`../../assets/images/${option.image_url}`);
 
 const InputRadioV3 = ({ block, context }) => {
   const {
@@ -105,7 +104,7 @@ const InputRadioV3 = ({ block, context }) => {
             >
               {block.showImages && (
                 <Image
-                  src={optionName.default}
+                  src={require(`@/assets/images/${option.image_url}`).default}
                   alt={option.name}
                   className="flex-1 mb-1"
                   height={100}
